@@ -124,7 +124,7 @@ const CODE_EXTS: &[&str] = &[
     ".scala", ".ts", ".tsx",
 ];
 
-pub(crate) fn suffix_of(rel_path: &str) -> String {
+pub fn suffix_of(rel_path: &str) -> String {
     let lower = rel_path.to_ascii_lowercase();
     if lower.ends_with(".d.ts") {
         ".d.ts".to_string()
@@ -137,7 +137,7 @@ pub(crate) fn suffix_of(rel_path: &str) -> String {
     }
 }
 
-pub(crate) fn is_text_candidate(name: &str, suffix: &str, rel_path: &str) -> bool {
+pub fn is_text_candidate(name: &str, suffix: &str, rel_path: &str) -> bool {
     let lower = rel_path.to_ascii_lowercase();
     TEXT_BASENAMES
         .iter()
@@ -150,6 +150,6 @@ pub(crate) fn is_text_candidate(name: &str, suffix: &str, rel_path: &str) -> boo
         )
 }
 
-pub(crate) fn is_code_file(name: &str, suffix: &str) -> bool {
+pub fn is_code_file(name: &str, suffix: &str) -> bool {
     matches!(name, "Makefile" | "makefile" | "Justfile" | "justfile") || CODE_EXTS.contains(&suffix)
 }
