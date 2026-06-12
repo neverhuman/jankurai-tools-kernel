@@ -69,3 +69,35 @@ jobs:
           path: |
             .jankurai/repo-score.json
             .jankurai/repo-score.md
+
+  tool-adoption:
+    name: tool-adoption-evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@b3b07ba8b418998c39fb20f53e8b695cdcc8de1b # stable
+      - name: Run adopted jankurai tool lanes
+        run: bash ops/ci/tool-adoption.sh
+      - name: Upload tool-adoption evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: tool-adoption-evidence
+          path: |
+            target/jankurai/repo-score.json
+            target/jankurai/repo-score.md
+            target/jankurai/repair-queue.jsonl
+            target/jankurai/proofbind/surface-witness.json
+            target/jankurai/proofbind/obligations.json
+            target/jankurai/proofmark/proofmark-receipt.json
+            target/jankurai/proofmark/proof-receipt.json
+            target/jankurai/copy-code.json
+            target/jankurai/copy-code.md
+            target/jankurai/security/evidence.json
+            target/jankurai/language-bad-behavior.log
+            target/jankurai/vibe-coverage.json
+            target/jankurai/vibe-coverage.md
+            target/jankurai/coverage/coverage-audit.json
+            target/jankurai/coverage/coverage-audit.md
