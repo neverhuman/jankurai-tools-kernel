@@ -1,0 +1,69 @@
+# Live minimal lane set for jankurai-tools-kernel.
+# Every lane command runs in this repo alone and is mirrored by the Justfile and
+# the ops/ci/<lane>.sh scripts so local runs match CI exactly.
+
+[[lane]]
+name = "required"
+command = "bash scripts/ci-local.sh required"
+purpose = "verify the workspace manifest resolves against the locked dependency graph"
+command_id = "lane.required"
+kind = "validation"
+cost = 3
+rules_covered = ["HLT-003-OWNERLESS-PATH", "HLT-004-UNMAPPED-PROOF"]
+required_artifacts = []
+timeout_seconds = 900
+requires_network = false
+destructive = false
+
+[[lane]]
+name = "fast"
+command = "just fast"
+purpose = "deterministic fast lane: cargo check --workspace --locked + cargo nextest run --workspace"
+command_id = "lane.fast"
+kind = "validation"
+cost = 5
+rules_covered = ["HLT-001-DEAD-MARKER", "HLT-003-OWNERLESS-PATH", "HLT-004-UNMAPPED-PROOF", "HLT-029-RUST-BAD-BEHAVIOR"]
+required_artifacts = []
+timeout_seconds = 900
+requires_network = false
+destructive = false
+
+[[lane]]
+name = "security"
+command = "just security"
+purpose = "secret scanning (gitleaks) and dependency vulnerability scanning (cargo audit)"
+command_id = "lane.security"
+kind = "security"
+cost = 20
+rules_covered = ["HLT-009-GENERATED-SECURITY", "HLT-010-SECRET-SPRAWL", "HLT-016-SUPPLY-CHAIN-DRIFT", "HLT-020-CI-HARDENING-GAP"]
+required_artifacts = []
+timeout_seconds = 1800
+requires_network = false
+destructive = false
+
+[[lane]]
+name = "audit"
+command = "just audit"
+purpose = "write .jankurai/repo-score.json and .jankurai/repo-score.md via jankurai audit"
+command_id = "lane.audit"
+kind = "audit"
+cost = 10
+rules_covered = ["HLT-001-DEAD-MARKER", "HLT-003-OWNERLESS-PATH", "HLT-004-UNMAPPED-PROOF", "HLT-008-FALSE-GREEN-RISK"]
+required_artifacts = [".jankurai/repo-score.json", ".jankurai/repo-score.md"]
+timeout_seconds = 900
+requires_network = false
+destructive = false
+
+[[lane]]
+name = "full"
+command = "just check"
+purpose = "run format, lint, fast, security, and self-audit as the merge gate"
+command_id = "lane.full"
+kind = "release"
+cost = 50
+supersedes = ["required", "fast", "security", "audit"]
+rules_covered = ["HLT-001-DEAD-MARKER", "HLT-008-FALSE-GREEN-RISK", "HLT-009-GENERATED-SECURITY"]
+required_artifacts = [".jankurai/repo-score.json", ".jankurai/repo-score.md"]
+timeout_seconds = 3600
+requires_network = false
+destructive = false

@@ -1,0 +1,25 @@
+{
+  "workspace": "jankurai-tools-kernel",
+  "owners": {
+    "AGENTS.md": "agent",
+    "SPLIT.md": "workspace",
+    "README.md": "workspace",
+    "LICENSE": "workspace",
+    "CHANGELOG.md": "workspace",
+    ".gitignore": "workspace",
+    "Justfile": "ops",
+    "VERSION": "workspace",
+    "rust-toolchain.toml": "ops",
+    ".jeryu/": "ops",
+    ".github/": "ops",
+    ".cargo/": "ops",
+    "agent/": "agent",
+    "ops/": "ops",
+    "scripts/": "ops",
+    "Cargo.toml": "tools",
+    "Cargo.lock": "tools",
+    "crates/": "tools",
+    "schemas/": "standard",
+    "docs/": "standard"
+  }
+}

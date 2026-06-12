@@ -1,0 +1,37 @@
+# Boundary manifest for jankurai-tools-kernel.
+# This is a single-purpose Rust workspace: the jankurai-audit-kernel crate,
+# the shared audit substrate (model, scan, rules, caps, boundaries, validation,
+# render) for the Jankurai audit standard. Only the Rust domain block applies
+# here; web, database, queue, and Python surfaces are not part of this repo.
+# See docs/boundaries.md for prose.
+
+[stack]
+id = "rust-ts-vite-react-postgres-bounded-python"
+version = "0.5.0"
+
+[rust]
+domain_paths = ["crates/jankurai-audit-kernel/src/domain"]
+forbidden_domain_imports = [
+  "std::fs",
+  "std::env",
+  "std::net",
+  "std::time::SystemTime",
+  "rand::",
+  "sqlx::",
+  "diesel::",
+  "reqwest::",
+  "rdkafka::",
+  "tracing::",
+  "log::"
+]
+
+# The kernel's scan detectors carry queue/streaming client *marker strings*
+# (e.g. `rdkafka`) as detection patterns, not as live client usage. This repo
+# ships no queue adapter; the documented brownfield exception keeps the
+# detector-definition source from being misread as an out-of-boundary client.
+[[streaming_exception]]
+runtime = "kafka"
+classification = "brownfield"
+owner = "tools"
+expires = "2026-12-31"
+migration_path = "Detector marker strings live only in the audit-kernel scan source; they are pattern literals, not a live streaming client. Keep queue clients behind generated event contracts if a queue surface is ever added to this kernel."

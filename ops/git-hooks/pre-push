@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Pre-push quality gate for jankurai-tools-kernel.
+# Wire it once with: git config core.hooksPath ops/git-hooks
+# Runs the exact lanes CI runs so a green local gate means a green CI run.
+set -euo pipefail
+exec bash "$(git rev-parse --show-toplevel)/ops/ci/quality-gates.sh"
