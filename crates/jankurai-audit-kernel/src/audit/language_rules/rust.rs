@@ -450,6 +450,10 @@ fn rust_files(ctx: &AuditContext) -> Vec<crate::model::FileInfo> {
                 && !rel.starts_with("crates/jankurai/")
                 && !rel.starts_with("crates/jankurai-proofbind/")
                 && !rel.starts_with("crates/jankurai-proofmark/")
+                && !rel.starts_with("crates/jankurai-audit-kernel/")
+                && !rel.starts_with("crates/jankurai-audit-dedup/")
+                && !rel.starts_with("crates/jankurai-audit-analyzers/")
+                && !rel.starts_with("crates/jankurai-fleet/")
                 && !zone_paths
                     .iter()
                     .any(|zone| crate::audit::helpers::path_matches_prefix(&file.rel_path, zone))

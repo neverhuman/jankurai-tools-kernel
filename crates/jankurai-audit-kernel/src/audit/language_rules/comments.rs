@@ -328,6 +328,10 @@ fn is_comment_scannable_file(file: &FileInfo) -> bool {
     if lower.starts_with("crates/jankurai/")
         || lower.starts_with("crates/jankurai-proofbind/")
         || lower.starts_with("crates/jankurai-proofmark/")
+        || lower.starts_with("crates/jankurai-audit-kernel/")
+        || lower.starts_with("crates/jankurai-audit-dedup/")
+        || lower.starts_with("crates/jankurai-audit-analyzers/")
+        || lower.starts_with("crates/jankurai-fleet/")
     {
         return false;
     }

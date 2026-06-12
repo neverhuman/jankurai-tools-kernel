@@ -753,6 +753,10 @@ pub fn secret_hits(ctx: &AuditContext) -> Vec<FindingHit> {
         if file.is_generated
             || is_tracked_auditor_score_artifact(&file.rel_path)
             || file.rel_path.starts_with("crates/jankurai/")
+            || file.rel_path.starts_with("crates/jankurai-audit-kernel/")
+            || file.rel_path.starts_with("crates/jankurai-audit-dedup/")
+            || file.rel_path.starts_with("crates/jankurai-audit-analyzers/")
+            || file.rel_path.starts_with("crates/jankurai-fleet/")
             || file.rel_path.starts_with("docs/")
             || file.rel_path.starts_with("paper/")
             || file.rel_path.starts_with("reference/")
@@ -1302,6 +1306,10 @@ pub fn human_review_evidence_hits(ctx: &AuditContext) -> Vec<FindingHit> {
             && !file.rel_path.starts_with("paper/")
             && file.rel_path != "agent/vibe-coverage.toml"
             && !file.rel_path.starts_with("crates/jankurai/")
+            && !file.rel_path.starts_with("crates/jankurai-audit-kernel/")
+            && !file.rel_path.starts_with("crates/jankurai-audit-dedup/")
+            && !file.rel_path.starts_with("crates/jankurai-audit-analyzers/")
+            && !file.rel_path.starts_with("crates/jankurai-fleet/")
     }) {
         for (idx, line) in file.text.lines().enumerate() {
             let lower = line.to_ascii_lowercase();
@@ -1531,7 +1539,11 @@ fn is_streaming_checked_path(path: &str) -> bool {
         || path.starts_with("agent/")
         || path.starts_with(".github/")
         || path.starts_with("packages/ux-qa/")
-        || path.starts_with("crates/jankurai/"))
+        || path.starts_with("crates/jankurai/")
+        || path.starts_with("crates/jankurai-audit-kernel/")
+        || path.starts_with("crates/jankurai-audit-dedup/")
+        || path.starts_with("crates/jankurai-audit-analyzers/")
+        || path.starts_with("crates/jankurai-fleet/"))
 }
 
 fn streaming_adapter_path(ctx: &AuditContext, path: &str) -> bool {
