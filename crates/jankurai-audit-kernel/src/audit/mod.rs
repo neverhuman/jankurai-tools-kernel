@@ -1,8 +1,14 @@
 pub mod copy_code;
 pub mod evidence;
 pub mod file_kinds;
+pub mod finding_builder;
 pub mod fs;
 pub mod fs_policy;
+pub mod helpers;
+pub mod language_rules;
 pub mod prose;
+pub mod rule_analyzer;
 pub mod rules;
+pub mod scan;
+pub mod smart_scan;
 pub mod source_context;
