@@ -1,0 +1,32 @@
+[package]
+name = "jankurai-audit-kernel"
+version = "0.1.0"
+edition = "2021"
+description = "Shared audit substrate (model, scan, rules, boundaries) for the Jankurai audit standard."
+license = "MIT"
+repository = "https://github.com/neverhuman/jankurai-tools-kernel"
+homepage = "https://github.com/neverhuman/jankurai"
+keywords = ["agent", "audit", "standard", "kernel"]
+categories = ["development-tools"]
+
+[dependencies]
+anyhow = "1.0"
+aho-corasick = "1.1"
+globset = "0.4"
+ignore = "0.4"
+once_cell = "1.21"
+rayon = "1.11"
+regex = "1.12"
+serde_yaml = "0.9"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+semver = "1.0"
+toml = "0.9"
+quote = "1.0"
+syn = { version = "2.0", features = ["full"] }
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+walkdir = "2.5"
+
+[dev-dependencies]
+tempfile = "3.23"
