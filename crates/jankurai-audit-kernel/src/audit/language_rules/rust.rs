@@ -246,7 +246,10 @@ const HARD_RULES: &[LanguageRule] = &[
         category: "security",
         lane: "fast",
         confidence: ConfidencePolicy::High,
-        matcher: Matcher::ContainsAny(&["unbounded_channel(", "unbounded("]),
+        // `unbounded_channel(` + the `mpsc::unbounded(` form. Use `::unbounded(`
+        // (qualified) rather than bare `unbounded(`, which also matches function
+        // names like `fn frob_is_unbounded()` — a false positive on identifiers.
+        matcher: Matcher::ContainsAny(&["unbounded_channel(", "::unbounded("]),
         proof_window: ProofWindow::NearbyAsyncContext,
         problem: "unbounded channel or task creation needs explicit backpressure proof",
         fix: "use a bounded channel or document the queue bound and shutdown path",
@@ -703,7 +706,7 @@ fn hard_hit_for_line(
             "NearbyAsyncContext",
         ));
     }
-    if lower.contains("unbounded_channel(") || lower.contains("unbounded(") {
+    if lower.contains("unbounded_channel(") || lower.contains("::unbounded(") {
         return Some(finding(
             "rust.async.unbounded-channel",
             "unbounded_channel",

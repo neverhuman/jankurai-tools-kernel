@@ -668,11 +668,18 @@ fn has_fallible_source_marker(lower: &str) -> bool {
         "from_str",
         "from_slice",
         "deserialize",
-        "json",
+        // NOTE: bare "json" is NOT a fallible-source marker — it matches infallible
+        // JSON CONSTRUCTION (`json!{...}`, `Json::Str(..)`, building a
+        // `serde_json::Value`), so `value.field.clone().unwrap_or_default()` inside
+        // a `json!` block was wrongly flagged as error-hiding. Genuinely-fallible
+        // JSON parsing is `from_str`/`from_slice`/`deserialize` (above).
         "env::var",
         "try_from",
         "load(",
-        "lookup(",
+        // NOTE: bare "lookup(" is NOT a fallible-source marker — `registry.lookup(k)`
+        // / `lookup(node, "from")` return an `Option` (infallible); `.or_else(..)`
+        // on them is an idiomatic alias/default, not error swallowing. Genuinely-
+        // fallible data access is `query(`/`fetch(`/`execute(`/`connect(` (below).
         "fetch(",
         // Call form only: a bare `request` matches common variable/field names
         // like `request.default_branch`, which are not fallible sources.
@@ -1791,17 +1798,35 @@ pub fn wrong_layer_db_hits(ctx: &AuditContext) -> Vec<FindingHit> {
         if ["apps/web/", "crates/domain/", "frontend/", "ui/", "src/"]
             .iter()
             .any(|p| file.rel_path.starts_with(p))
-            && [
-                "select ", "insert ", "update ", "delete ", "sqlx", "diesel", "psycopg", "sqlite3",
+        {
+            let lower = file.text.to_ascii_lowercase();
+            // Precise DB driver / ORM markers — unambiguous in any context.
+            let driver = [
+                "sqlx", "diesel", "psycopg", "sqlite3", "better-sqlite3", "knex", "typeorm",
+                "prisma", "mongoose", "mysql2",
             ]
             .iter()
-            .any(|m| file.text.to_ascii_lowercase().contains(m))
-        {
-            hits.push(FindingHit::new(
-                &file.rel_path,
-                1,
-                "DB marker in non-adapter layer",
-            ));
+            .any(|m| lower.contains(m));
+            // Raw SQL must be matched by STATEMENT SHAPE, not by a bare keyword.
+            // Plain `select`/`insert`/`update`/`delete` words are ordinary English
+            // ("value updates don't relayout", "insert keeping seq order", "delete
+            // the row", "deselect all"), and ` from ` is in every TS import — so
+            // those alone are NOT DB access. Require the surrounding statement.
+            let raw_sql = lower.contains("insert into ")
+                || lower.contains("delete from ")
+                || lower.contains("create table ")
+                || lower.contains("drop table ")
+                || lower.contains("truncate table ")
+                || lower.contains("alter table ")
+                || (lower.contains("update ") && lower.contains(" set "))
+                || (lower.contains("select ") && lower.contains(" from ") && lower.contains(" where "));
+            if driver || raw_sql {
+                hits.push(FindingHit::new(
+                    &file.rel_path,
+                    1,
+                    "DB marker in non-adapter layer",
+                ));
+            }
         }
     }
     hits
@@ -2708,6 +2733,42 @@ fn finding_count(row: &Value) -> Result<u64> {
         assert!(
             fallback_hits(&ctx).is_empty(),
             "unwrap_or(candidate) should not be considered fallback soup"
+        );
+    }
+
+    #[test]
+    fn wrong_layer_db_skips_english_keywords_but_keeps_real_sql_and_drivers() {
+        // Plain English/JS words in the web layer are NOT DB access.
+        let prose = "// value updates don't relayout\nlet x = arr.delete(i);\n// insert keeping seq order\nconst y = items.filter(z => z.from);\n";
+        let ctx = make_ctx(vec![product_file("apps/web/src/lib/timeline.ts", prose)]);
+        assert!(
+            wrong_layer_db_hits(&ctx).is_empty(),
+            "english select/insert/update/delete words are not DB access: {:?}",
+            wrong_layer_db_hits(&ctx)
+        );
+        // A real SQL statement / driver in the web layer IS flagged.
+        let sql = "const rows = await db.query(`select id from users where id = $1`);\n";
+        let ctx2 = make_ctx(vec![product_file("apps/web/src/data/users.ts", sql)]);
+        assert!(!wrong_layer_db_hits(&ctx2).is_empty(), "select..from..where IS db access");
+        let driver = "import knex from 'knex';\n";
+        let ctx3 = make_ctx(vec![product_file("apps/web/src/data/conn.ts", driver)]);
+        assert!(!wrong_layer_db_hits(&ctx3).is_empty(), "a db driver import IS db access");
+    }
+
+    #[test]
+    fn fallback_hits_skips_json_construction_and_option_lookups() {
+        // `json!`/`Json::` construction and `.or_else`/`unwrap_or_default` over an
+        // `Option` returned by a `lookup(..)` helper are infallible idioms, not
+        // error-hiding. Even two on one file must not be flagged as fallback soup
+        // (regression: bare "json"/"lookup(" used to be treated as fallible sources).
+        let text = "let g = summary.clone().unwrap_or_else(|| json!({}));\n\
+                    let from = lookup(edge, \"from\").or_else(|| lookup(edge, \"src\"));\n\
+                    let s = Json::Str(candidate.hypothesis.clone().unwrap_or_default());\n";
+        let ctx = make_ctx(vec![product_file("apps/api/src/build.rs", text)]);
+        assert!(
+            fallback_hits(&ctx).is_empty(),
+            "json construction + Option lookups are idiomatic, not fallback soup: {:?}",
+            fallback_hits(&ctx)
         );
     }
 
