@@ -667,12 +667,17 @@ fn has_fallible_source_marker(lower: &str) -> bool {
         "parse(",
         "from_str",
         "from_slice",
+        "from_value(",
+        "from_reader(",
         "deserialize",
         // NOTE: bare "json" is NOT a fallible-source marker — it matches infallible
         // JSON CONSTRUCTION (`json!{...}`, `Json::Str(..)`, building a
         // `serde_json::Value`), so `value.field.clone().unwrap_or_default()` inside
         // a `json!` block was wrongly flagged as error-hiding. Genuinely-fallible
-        // JSON parsing is `from_str`/`from_slice`/`deserialize` (above).
+        // JSON parsing is the CALL forms `from_str`/`from_slice`/`from_value(`/
+        // `from_reader(`/`deserialize` (above) — `from_value(`/`from_reader(` use
+        // the call-paren so they match the fallible serde fns, not a `from_value`
+        // field/identifier.
         "env::var",
         "try_from",
         "load(",
@@ -1803,7 +1808,7 @@ pub fn wrong_layer_db_hits(ctx: &AuditContext) -> Vec<FindingHit> {
             // Precise DB driver / ORM markers — unambiguous in any context.
             let driver = [
                 "sqlx", "diesel", "psycopg", "sqlite3", "better-sqlite3", "knex", "typeorm",
-                "prisma", "mongoose", "mysql2",
+                "prisma", "mongoose", "mysql2", "rusqlite", "tokio-postgres",
             ]
             .iter()
             .any(|m| lower.contains(m));
@@ -2753,6 +2758,11 @@ fn finding_count(row: &Value) -> Result<u64> {
         let driver = "import knex from 'knex';\n";
         let ctx3 = make_ctx(vec![product_file("apps/web/src/data/conn.ts", driver)]);
         assert!(!wrong_layer_db_hits(&ctx3).is_empty(), "a db driver import IS db access");
+        // Rust DB drivers (rusqlite/tokio-postgres) in a non-adapter layer are
+        // flagged even when the SQL has no WHERE clause / is opaque.
+        let rusqlite = "use rusqlite::Connection;\nlet rows = conn.query(\"select * from t\");\n";
+        let ctx4 = make_ctx(vec![product_file("crates/domain/src/store.rs", rusqlite)]);
+        assert!(!wrong_layer_db_hits(&ctx4).is_empty(), "a rusqlite driver IS db access");
     }
 
     #[test]
@@ -2769,6 +2779,18 @@ fn finding_count(row: &Value) -> Result<u64> {
             fallback_hits(&ctx).is_empty(),
             "json construction + Option lookups are idiomatic, not fallback soup: {:?}",
             fallback_hits(&ctx)
+        );
+        // True-positive (protection preserved): a genuinely-fallible serde parse
+        // swallowed into a default IS fallback soup. `from_value(`/`from_reader(`
+        // are call-form markers, so the real fallible parse is still caught even
+        // though bare "json" was removed.
+        let real = "let a = serde_json::from_value(v).unwrap_or_default();\n\
+                    let b = serde_json::from_reader(rdr).unwrap_or_default();\n";
+        let ctx_real = make_ctx(vec![product_file("apps/api/src/parse.rs", real)]);
+        assert!(
+            !fallback_hits(&ctx_real).is_empty(),
+            "from_value/from_reader parse-or-default IS fallback soup: {:?}",
+            fallback_hits(&ctx_real)
         );
     }
 
