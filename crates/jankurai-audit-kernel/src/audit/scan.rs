@@ -658,11 +658,35 @@ fn line_has_error_hiding_fallback(line: &str) -> bool {
             || lower.contains("retry"))
 }
 
+/// True if the call `name(` (e.g. "load(") appears NOT embedded in a larger
+/// identifier — the char immediately before it must not be an identifier char.
+/// So `.load(` and `load(` match, but `payload(`/`upload(`/`reload(` do not (the
+/// same substring false-positive class already fixed for bare `retry`).
+fn has_call_marker(lower: &str, call: &str) -> bool {
+    let bytes = lower.as_bytes();
+    let mut start = 0;
+    while let Some(rel) = lower[start..].find(call) {
+        let abs = start + rel;
+        let before_is_ident =
+            abs > 0 && (bytes[abs - 1].is_ascii_alphanumeric() || bytes[abs - 1] == b'_');
+        if !before_is_ident {
+            return true;
+        }
+        start = abs + 1;
+    }
+    false
+}
+
 fn has_fallible_source_marker(lower: &str) -> bool {
+    // `load(` / `read(` are matched at an identifier boundary so they do not fire
+    // on `payload(`/`upload(` (the `info.payload()` panic-hook idiom) or
+    // `spread(`/`thread(` — the substring FP class already fixed for bare `retry`.
+    if has_call_marker(lower, "load(") || has_call_marker(lower, "read(") {
+        return true;
+    }
     [
         "read_to_string",
         "read_dir",
-        "read(",
         "open(",
         "parse(",
         "from_str",
@@ -671,7 +695,6 @@ fn has_fallible_source_marker(lower: &str) -> bool {
         "json",
         "env::var",
         "try_from",
-        "load(",
         "lookup(",
         "fetch(",
         // Call form only: a bare `request` matches common variable/field names
@@ -1776,6 +1799,35 @@ pub fn generated_zone_issues(ctx: &AuditContext) -> Vec<FindingHit> {
     issues
 }
 
+/// True if a lowercased line contains a SQL STATEMENT SHAPE (not a bare English
+/// verb): `select … from`, `insert into`, `update … set`, `delete from`,
+/// `drop table|database|index`. This is what distinguishes a real query from UI
+/// copy like `'delete failed'` or a DOM `<select>` element / `selectLeaderboard`.
+fn line_has_sql_statement(line: &str) -> bool {
+    (line.contains("select ") && line.contains(" from "))
+        || line.contains("insert into")
+        || (line.contains("update ") && line.contains(" set "))
+        || line.contains("delete from")
+        || line.contains("drop table")
+        || line.contains("drop database")
+        || line.contains("drop index")
+}
+
+/// True if a lowercased line references a database client/driver symbol. These
+/// have no DOM/English collision, so a plain substring is safe.
+fn line_has_db_driver(line: &str) -> bool {
+    [
+        "sqlx",
+        "diesel",
+        "psycopg",
+        "sqlite3",
+        "rusqlite",
+        "better-sqlite3",
+    ]
+    .iter()
+    .any(|m| line.contains(m))
+}
+
 pub fn wrong_layer_db_hits(ctx: &AuditContext) -> Vec<FindingHit> {
     let mut hits = vec![];
     for file in product_files(ctx) {
@@ -1788,20 +1840,25 @@ pub fn wrong_layer_db_hits(ctx: &AuditContext) -> Vec<FindingHit> {
         {
             continue;
         }
-        if ["apps/web/", "crates/domain/", "frontend/", "ui/", "src/"]
+        if !["apps/web/", "crates/domain/", "frontend/", "ui/", "src/"]
             .iter()
             .any(|p| file.rel_path.starts_with(p))
-            && [
-                "select ", "insert ", "update ", "delete ", "sqlx", "diesel", "psycopg", "sqlite3",
-            ]
-            .iter()
-            .any(|m| file.text.to_ascii_lowercase().contains(m))
         {
-            hits.push(FindingHit::new(
-                &file.rel_path,
-                1,
-                "DB marker in non-adapter layer",
-            ));
+            continue;
+        }
+        // Line-scoped, SQL-statement-shape / driver match — NOT a whole-file bare
+        // keyword substring (which matched UI copy like 'delete failed' and the
+        // DOM <select> element). One finding per file at the first real hit.
+        for (idx, raw_line) in file.text.lines().enumerate() {
+            let line = raw_line.to_ascii_lowercase();
+            if line_has_sql_statement(&line) || line_has_db_driver(&line) {
+                hits.push(FindingHit::new(
+                    &file.rel_path,
+                    idx + 1,
+                    "DB marker in non-adapter layer",
+                ));
+                break;
+            }
         }
     }
     hits
