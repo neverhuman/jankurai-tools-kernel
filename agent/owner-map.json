@@ -15,11 +15,13 @@
     ".cargo/": "ops",
     "agent/": "agent",
     "ops/": "ops",
+    "tools/": "ops",
     "scripts/": "ops",
     "Cargo.toml": "tools",
     "Cargo.lock": "tools",
     "crates/": "tools",
     "schemas/": "standard",
+    "tips/": "paper",
     "docs/": "standard"
   }
 }

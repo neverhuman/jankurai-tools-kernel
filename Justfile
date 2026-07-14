@@ -40,8 +40,7 @@ test:
 # Security lane: secret scanning plus dependency vulnerability scanning.
 # gitleaks scans for committed secrets; cargo audit checks the Rust dependency tree.
 security:
-    gitleaks detect --source . --no-banner --redact
-    cargo audit
+    bash ops/ci/security.sh
 
 # Jankurai self-audit lane: writes the repo-score artifacts that CI uploads.
 audit:

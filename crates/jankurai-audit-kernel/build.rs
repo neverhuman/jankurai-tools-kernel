@@ -13,6 +13,7 @@ use std::path::Path;
 fn main() {
     let manifest = env::var("CARGO_MANIFEST_DIR").expect("CARGO_MANIFEST_DIR");
     let schemas_dir = Path::new(&manifest)
+        .join("generated")
         .join("schemas")
         .canonicalize()
         .expect("resolve schemas dir");

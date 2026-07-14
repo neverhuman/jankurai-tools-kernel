@@ -57,9 +57,17 @@
       "command": "bash scripts/ci-local.sh required",
       "purpose": "verify schema contracts stay present and valid"
     },
+    "tips/": {
+      "command": "jankurai vibe coverage --source agent/vibe-coverage.toml --tips tips/vibe_coding --json target/jankurai/vibe-coverage.json --md target/jankurai/vibe-coverage.md",
+      "purpose": "verify the committed vibe-source corpus matches the coverage manifest"
+    },
     "ops/": {
       "command": "bash scripts/ci-local.sh required",
       "purpose": "verify pinned CI script entrypoints"
+    },
+    "tools/": {
+      "command": "bash ops/ci/security.sh",
+      "purpose": "run the canonical security wrapper and emit structured tool evidence"
     },
     "scripts/": {
       "command": "bash scripts/ci-local.sh required",

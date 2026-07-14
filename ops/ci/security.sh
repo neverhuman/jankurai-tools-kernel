@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-# Security lane: secret scanning plus dependency vulnerability scanning.
-# gitleaks scans for committed secrets; cargo audit checks the Rust dependency
-# tree. The same lane runs locally via `just security`.
+# Security lane: delegate to the canonical release-grade security wrapper.
 set -euo pipefail
 source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 cd "$REPO_ROOT"
 
-log "security lane: gitleaks + cargo audit"
-gitleaks detect --source . --no-banner --redact
-cargo audit
+log "security lane: canonical tools/security-lane.sh"
+bash tools/security-lane.sh
