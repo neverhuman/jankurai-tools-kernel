@@ -13,12 +13,15 @@ use std::path::Path;
 fn main() {
     let manifest = env::var("CARGO_MANIFEST_DIR").expect("CARGO_MANIFEST_DIR");
     let schemas_dir = Path::new(&manifest)
-        .join("..")
-        .join("..")
         .join("schemas")
         .canonicalize()
         .expect("resolve schemas dir");
     println!("cargo:rerun-if-changed={}", schemas_dir.display());
+
+    let workspace_schemas = Path::new(&manifest).join("..").join("..").join("schemas");
+    if workspace_schemas.is_dir() {
+        assert_schema_snapshot_matches(&workspace_schemas, &schemas_dir);
+    }
 
     let mut entries: Vec<(String, String)> = Vec::new();
     for dent in fs::read_dir(&schemas_dir).expect("read schemas dir") {
@@ -50,4 +53,34 @@ fn main() {
     let out_dir = env::var("OUT_DIR").expect("OUT_DIR");
     let dest = Path::new(&out_dir).join("schemas_embed.rs");
     fs::write(&dest, out).expect("write schemas_embed.rs");
+}
+
+fn assert_schema_snapshot_matches(workspace: &Path, packaged: &Path) {
+    let mut workspace_entries = schema_entries(workspace);
+    let mut packaged_entries = schema_entries(packaged);
+    workspace_entries.sort();
+    packaged_entries.sort();
+    assert_eq!(
+        workspace_entries, packaged_entries,
+        "packaged schema snapshot differs from workspace schemas"
+    );
+}
+
+fn schema_entries(root: &Path) -> Vec<(String, Vec<u8>)> {
+    fs::read_dir(root)
+        .expect("read schemas dir")
+        .filter_map(|entry| {
+            let path = entry.expect("schemas dir entry").path();
+            if path.extension().and_then(|ext| ext.to_str()) != Some("json") {
+                return None;
+            }
+            let name = path
+                .file_name()
+                .and_then(|name| name.to_str())
+                .expect("schema file name")
+                .to_string();
+            let bytes = fs::read(path).expect("read schema");
+            Some((name, bytes))
+        })
+        .collect()
 }

@@ -14,6 +14,8 @@ version string lives in [`VERSION`](VERSION).
 
 - Bind generated audit and proof provenance to the compiled auditor version
   `1.6.11` through the shared kernel constant.
+- Package the schema snapshot with the kernel crate and fail builds when it
+  drifts from the workspace schemas, so published tarballs remain verifiable.
 
 ### Added
 
