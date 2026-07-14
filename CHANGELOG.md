@@ -8,6 +8,13 @@ version string lives in [`VERSION`](VERSION).
 
 ## [Unreleased]
 
+## [1.7.0-split.2] - 2026-07-14
+
+### Fixed
+
+- Bind generated audit and proof provenance to the compiled auditor version
+  `1.6.11` through the shared kernel constant.
+
 ### Added
 
 - Root `Justfile` command surface with `setup`, `fast`, `check`, `security`, and

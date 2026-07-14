@@ -778,7 +778,9 @@ pub fn secret_hits(ctx: &AuditContext) -> Vec<FindingHit> {
             || file.rel_path.starts_with("crates/jankurai/")
             || file.rel_path.starts_with("crates/jankurai-audit-kernel/")
             || file.rel_path.starts_with("crates/jankurai-audit-dedup/")
-            || file.rel_path.starts_with("crates/jankurai-audit-analyzers/")
+            || file
+                .rel_path
+                .starts_with("crates/jankurai-audit-analyzers/")
             || file.rel_path.starts_with("crates/jankurai-fleet/")
             || file.rel_path.starts_with("docs/")
             || file.rel_path.starts_with("paper/")
@@ -1331,7 +1333,9 @@ pub fn human_review_evidence_hits(ctx: &AuditContext) -> Vec<FindingHit> {
             && !file.rel_path.starts_with("crates/jankurai/")
             && !file.rel_path.starts_with("crates/jankurai-audit-kernel/")
             && !file.rel_path.starts_with("crates/jankurai-audit-dedup/")
-            && !file.rel_path.starts_with("crates/jankurai-audit-analyzers/")
+            && !file
+                .rel_path
+                .starts_with("crates/jankurai-audit-analyzers/")
             && !file.rel_path.starts_with("crates/jankurai-fleet/")
     }) {
         for (idx, line) in file.text.lines().enumerate() {

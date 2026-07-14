@@ -14,7 +14,7 @@ extracted from jankurai-core so the core CLI and sibling tools depend on one ker
 
 - Local authoritative repo: `root/jankurai-tools-kernel`
 - Public mirror: `neverhuman/jankurai-tools-kernel`
-- Release tag pattern: `jankurai-tools-kernel-v1.7.0-split.0`
+- Release tag pattern: `jankurai-tools-kernel-v1.7.0-split.2`
 - Source extraction commit: `446af94`
 
 ## Split Rules
