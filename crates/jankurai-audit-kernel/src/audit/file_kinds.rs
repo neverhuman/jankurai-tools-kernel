@@ -87,6 +87,7 @@ const TEXT_EXTS: &[&str] = &[
     ".java",
     ".js",
     ".json",
+    ".jsonl",
     ".jsx",
     ".kt",
     ".kts",
@@ -152,4 +153,19 @@ pub fn is_text_candidate(name: &str, suffix: &str, rel_path: &str) -> bool {
 
 pub fn is_code_file(name: &str, suffix: &str) -> bool {
     matches!(name, "Makefile" | "makefile" | "Justfile" | "justfile") || CODE_EXTS.contains(&suffix)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn jsonl_contract_evidence_is_captured_as_text_but_not_code() {
+        let path = "contracts/widget-events-v2.jsonl";
+        let suffix = suffix_of(path);
+
+        assert_eq!(suffix, ".jsonl");
+        assert!(is_text_candidate("widget-events-v2.jsonl", &suffix, path));
+        assert!(!is_code_file("widget-events-v2.jsonl", &suffix));
+    }
 }

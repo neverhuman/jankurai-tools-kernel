@@ -1981,6 +1981,43 @@ pub fn future_hostile_hits(ctx: &AuditContext) -> Vec<FindingHit> {
         if is_future_hostile_allowlisted(&file) {
             continue;
         }
+
+        if file.suffix == ".rs" {
+            let test_scaffold_lines = source_context::source_lines(&file)
+                .into_iter()
+                .filter(|line| line.test_scaffold)
+                .map(|line| line.line_no)
+                .collect::<std::collections::BTreeSet<_>>();
+            let source_lines = file.text.lines().collect::<Vec<_>>();
+
+            for span in rust_comment_and_string_spans(&file.text) {
+                if test_scaffold_lines.contains(&span.line_no) {
+                    continue;
+                }
+                let Some(term) = future_hostile_text_term(&span.text) else {
+                    continue;
+                };
+                if allow_terms.iter().any(|allowed| allowed == &term) {
+                    continue;
+                }
+                let text = source_lines
+                    .get(span.line_no.saturating_sub(1))
+                    .copied()
+                    .unwrap_or(span.text.as_str())
+                    .trim()
+                    .to_string();
+                out.push(FindingHit {
+                    path: file.rel_path.clone(),
+                    line: Some(span.line_no),
+                    text,
+                    matched_term: Some(term.clone()),
+                    agent_fix: "remove or rename the marker, implement the intended behavior, model a typed unsupported state, or move docs/generated/vendor/product-copy text into an allowlisted context".into(),
+                    problem: format!("future-hostile/dead-language term `{term}` appears"),
+                });
+            }
+            continue;
+        }
+
         for line in source_context::source_lines(&file) {
             if line.comment_only || line.test_scaffold {
                 continue;
@@ -2024,6 +2061,250 @@ pub fn future_hostile_hits(ctx: &AuditContext) -> Vec<FindingHit> {
         }
     }
     out
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct RustTextSpan {
+    line_no: usize,
+    text: String,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum RustLexState {
+    Code,
+    BlockComment { depth: usize },
+    String { escaped: bool },
+    RawString { hashes: usize },
+}
+
+/// Extract only human-language-bearing Rust lexical contexts. Identifiers and other code tokens
+/// are deliberately absent: a variable or enum named `fallback`/`legacy` is a typed program
+/// element, not evidence of abandoned behavior. Comments and string diagnostics remain visible.
+fn rust_comment_and_string_spans(source: &str) -> Vec<RustTextSpan> {
+    let bytes = source.as_bytes();
+    let mut spans = Vec::new();
+    let mut state = RustLexState::Code;
+    let mut index = 0usize;
+    let mut line_no = 1usize;
+    let mut segment_start = 0usize;
+    let mut segment_line = 1usize;
+
+    while index < bytes.len() {
+        match state {
+            RustLexState::Code => {
+                if bytes[index] == b'\n' {
+                    line_no += 1;
+                    index += 1;
+                } else if bytes[index..].starts_with(b"//") {
+                    let start = index + 2;
+                    let end = bytes[start..]
+                        .iter()
+                        .position(|byte| *byte == b'\n')
+                        .map(|offset| start + offset)
+                        .unwrap_or(bytes.len());
+                    push_rust_text_span(&mut spans, line_no, &source[start..end]);
+                    index = end;
+                } else if bytes[index..].starts_with(b"/*") {
+                    state = RustLexState::BlockComment { depth: 1 };
+                    index += 2;
+                    segment_start = index;
+                    segment_line = line_no;
+                } else if let Some((content_start, hashes)) = raw_string_start(bytes, index) {
+                    state = RustLexState::RawString { hashes };
+                    index = content_start;
+                    segment_start = index;
+                    segment_line = line_no;
+                } else if bytes[index] == b'"' {
+                    state = RustLexState::String { escaped: false };
+                    index += 1;
+                    segment_start = index;
+                    segment_line = line_no;
+                } else if bytes[index] == b'\'' {
+                    if let Some(end) = rust_char_literal_end(bytes, index) {
+                        index = end;
+                    } else {
+                        index += 1;
+                    }
+                } else {
+                    index += next_char_len(source, index);
+                }
+            }
+            RustLexState::BlockComment { depth } => {
+                if bytes[index] == b'\n' {
+                    push_rust_text_span(&mut spans, segment_line, &source[segment_start..index]);
+                    line_no += 1;
+                    index += 1;
+                    segment_start = index;
+                    segment_line = line_no;
+                } else if bytes[index..].starts_with(b"/*") {
+                    state = RustLexState::BlockComment { depth: depth + 1 };
+                    index += 2;
+                } else if bytes[index..].starts_with(b"*/") {
+                    if depth == 1 {
+                        push_rust_text_span(
+                            &mut spans,
+                            segment_line,
+                            &source[segment_start..index],
+                        );
+                        state = RustLexState::Code;
+                    } else {
+                        state = RustLexState::BlockComment { depth: depth - 1 };
+                    }
+                    index += 2;
+                } else {
+                    index += next_char_len(source, index);
+                }
+            }
+            RustLexState::String { escaped } => {
+                if bytes[index] == b'\n' {
+                    push_rust_text_span(&mut spans, segment_line, &source[segment_start..index]);
+                    line_no += 1;
+                    index += 1;
+                    segment_start = index;
+                    segment_line = line_no;
+                    state = RustLexState::String { escaped: false };
+                } else if escaped {
+                    index += next_char_len(source, index);
+                    state = RustLexState::String { escaped: false };
+                } else if bytes[index] == b'\\' {
+                    index += 1;
+                    state = RustLexState::String { escaped: true };
+                } else if bytes[index] == b'"' {
+                    push_rust_text_span(&mut spans, segment_line, &source[segment_start..index]);
+                    state = RustLexState::Code;
+                    index += 1;
+                } else {
+                    index += next_char_len(source, index);
+                }
+            }
+            RustLexState::RawString { hashes } => {
+                if bytes[index] == b'\n' {
+                    push_rust_text_span(&mut spans, segment_line, &source[segment_start..index]);
+                    line_no += 1;
+                    index += 1;
+                    segment_start = index;
+                    segment_line = line_no;
+                } else if raw_string_ends_at(bytes, index, hashes) {
+                    push_rust_text_span(&mut spans, segment_line, &source[segment_start..index]);
+                    index += 1 + hashes;
+                    state = RustLexState::Code;
+                } else {
+                    index += next_char_len(source, index);
+                }
+            }
+        }
+    }
+
+    if !matches!(state, RustLexState::Code) {
+        push_rust_text_span(
+            &mut spans,
+            segment_line,
+            &source[segment_start..bytes.len()],
+        );
+    }
+    spans
+}
+
+fn push_rust_text_span(spans: &mut Vec<RustTextSpan>, line_no: usize, text: &str) {
+    let text = text.trim();
+    if !text.is_empty() {
+        spans.push(RustTextSpan {
+            line_no,
+            text: text.to_string(),
+        });
+    }
+}
+
+fn next_char_len(source: &str, index: usize) -> usize {
+    source[index..]
+        .chars()
+        .next()
+        .map(char::len_utf8)
+        .unwrap_or(1)
+}
+
+fn raw_string_start(bytes: &[u8], index: usize) -> Option<(usize, usize)> {
+    let mut cursor = match bytes.get(index..) {
+        Some(rest) if rest.starts_with(b"r") => index + 1,
+        Some(rest) if rest.starts_with(b"br") || rest.starts_with(b"cr") => index + 2,
+        _ => return None,
+    };
+    let mut hashes = 0usize;
+    while bytes.get(cursor) == Some(&b'#') {
+        hashes += 1;
+        cursor += 1;
+    }
+    (bytes.get(cursor) == Some(&b'"')).then_some((cursor + 1, hashes))
+}
+
+fn raw_string_ends_at(bytes: &[u8], index: usize, hashes: usize) -> bool {
+    bytes.get(index) == Some(&b'"')
+        && bytes
+            .get(index + 1..index + 1 + hashes)
+            .is_some_and(|suffix| suffix.iter().all(|byte| *byte == b'#'))
+}
+
+fn rust_char_literal_end(bytes: &[u8], start: usize) -> Option<usize> {
+    let mut cursor = start + 1;
+    let mut escaped = false;
+    while cursor < bytes.len() && cursor.saturating_sub(start) <= 12 {
+        match bytes[cursor] {
+            b'\n' => return None,
+            b'\'' if !escaped => return Some(cursor + 1),
+            b'\\' if !escaped => escaped = true,
+            _ => escaped = false,
+        }
+        cursor += 1;
+    }
+    None
+}
+
+fn future_hostile_text_term(text: &str) -> Option<String> {
+    let lower = text.to_ascii_lowercase();
+    future_hostile_term_regexes()
+        .iter()
+        .find(|(term, regex)| {
+            regex.is_match(text) && future_hostile_term_has_debt_context(term, &lower)
+        })
+        .map(|(term, _)| term.clone())
+}
+
+fn future_hostile_term_has_debt_context(term: &str, lower: &str) -> bool {
+    if matches!(
+        term,
+        "cleanup later"
+            | "remove later"
+            | "best effort"
+            | "dead code"
+            | "deprecated"
+            | "depricated"
+            | "temporary"
+            | "workaround"
+            | "obsolete"
+            | "fixme"
+            | "todo"
+    ) {
+        return true;
+    }
+
+    // Short lifecycle words are common domain vocabulary (legacy protocol values, stale fences,
+    // fallback results). They become debt markers only when the same human-language span states
+    // an abandonment, migration, or later-removal intent.
+    [
+        "remove",
+        "cleanup",
+        "delete",
+        "replace later",
+        "for now",
+        "until ",
+        "after migration",
+        "migrate away",
+        "abandon",
+        "retire",
+        "deprecate",
+    ]
+    .iter()
+    .any(|marker| lower.contains(marker))
 }
 
 /// True when `term` is the exact identifier being *declared* on `active` — a field/binding
@@ -2815,24 +3096,71 @@ fn finding_count(row: &Value) -> Result<u64> {
     }
 
     #[test]
-    fn future_hostile_hits_keep_runtime_strings_but_skip_local_bindings_and_comments() {
+    fn future_hostile_hits_ignore_rust_identifiers_and_benign_domain_language() {
         let text = [
-            "pub const MODE: &str = \"legacy mode\";",
+            "enum Mode { Legacy, Fallback }",
+            "let legacy = Mode::Legacy;",
             "let fallback = choose_default();",
             "Settings { params: fallback }",
-            "// stale shim fallback stub",
+            "let quote = '\"';",
+            "let message = \"no CPU fallback ran\";",
+            "let protocol = r#\"legacy compatibility mode\"#;",
+            "// A stale fence is rejected; the legacy protocol remains supported.",
+            "// The feature-gated stub reports unavailable; the FFI shim performs conversion.",
+            "// A multiclass placeholder carries the scalar projection outside the blend path.",
         ]
         .join("\n");
         let ctx = make_ctx(vec![product_file("apps/api/src/config.rs", &text)]);
         let hits = future_hostile_hits(&ctx);
         assert!(
-            hits.iter().any(|hit| hit.text.contains("legacy mode")),
-            "runtime string marker should remain visible"
+            hits.is_empty(),
+            "typed identifiers and truthful domain/status language are not abandoned-code evidence: {hits:?}"
         );
-        assert!(
-            hits.iter().all(|hit| !hit.text.contains("let fallback")),
-            "local binding-only fallback should not be reported"
+    }
+
+    #[test]
+    fn future_hostile_hits_keep_genuine_debt_language_in_rust_comments_and_strings() {
+        let text = [
+            "pub fn run() {",
+            "    /* TODO: remove legacy compatibility fallback after migration. */",
+            "    tracing::warn!(r#\"temporary compat shim remains; remove later\"#);",
+            "}",
+        ]
+        .join("\n");
+        let ctx = make_ctx(vec![product_file("apps/api/src/config.rs", &text)]);
+
+        let hits = future_hostile_hits(&ctx);
+
+        assert_eq!(
+            hits.len(),
+            2,
+            "comment and diagnostic must both flag: {hits:?}"
         );
+        assert!(hits.iter().any(|hit| hit.line == Some(2)));
+        assert!(hits.iter().any(|hit| hit.line == Some(3)));
+        assert!(hits.iter().all(|hit| {
+            hit.matched_term.is_some() && hit.problem.contains("future-hostile/dead-language term")
+        }));
+    }
+
+    #[test]
+    fn rust_lexical_scan_handles_nested_comments_raw_strings_and_char_literals() {
+        let text = concat!(
+            "let quote = '\"';\n",
+            "let ordinary = r##\"legacy protocol # remains supported\"##;\n",
+            "/* outer\n",
+            "   /* nested */ TODO: remove old shim after migration\n",
+            "*/\n",
+        );
+        let spans = rust_comment_and_string_spans(text);
+
+        assert!(spans
+            .iter()
+            .any(|span| span.text.contains("legacy protocol")));
+        assert!(spans
+            .iter()
+            .any(|span| span.text.contains("remove old shim")));
+        assert!(spans.iter().all(|span| !span.text.contains("let quote")));
     }
 
     #[test]
