@@ -862,7 +862,9 @@ pub fn is_runtime_stack_surface(file: &FileInfo, self_audit: bool) -> bool {
             || (!file.rel_path.starts_with("crates/jankurai/")
                 && !file.rel_path.starts_with("crates/jankurai-audit-kernel/")
                 && !file.rel_path.starts_with("crates/jankurai-audit-dedup/")
-                && !file.rel_path.starts_with("crates/jankurai-audit-analyzers/")
+                && !file
+                    .rel_path
+                    .starts_with("crates/jankurai-audit-analyzers/")
                 && !file.rel_path.starts_with("crates/jankurai-fleet/")))
         && !file.rel_path.starts_with("schemas/")
         && !["contracts/", "db/", "migrations/", "ops/", "/.github/"]

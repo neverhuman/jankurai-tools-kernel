@@ -272,6 +272,12 @@ carry equivalent machine-readable identity in their native schema. Required
 identity includes generator/schema metadata and version fields for reports, or
 the package-manager lockfile shape for lockfiles.
 
+`write_policy = "reviewed_manual"` is reserved for tracked source artifacts,
+such as contract fixtures, whose native format cannot carry comment headers.
+They must declare a non-empty source and verification command, must exist, and
+are changed through ordinary code review and their declared proof lane; they
+are not generator-owned output.
+
 ## Proof Lanes
 
 Use `agent/test-map.json` to select the smallest credible lane.

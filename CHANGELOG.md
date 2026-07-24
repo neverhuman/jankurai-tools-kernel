@@ -8,6 +8,11 @@ version string lives in [`VERSION`](VERSION).
 
 ## [Unreleased]
 
+### Changed
+
+- Treat `reviewed_manual` generated-zone entries as review-governed source
+  artifacts while retaining existence, metadata, and generator-only guards.
+
 ### Added
 
 - Root `Justfile` command surface with `setup`, `fast`, `check`, `security`, and
