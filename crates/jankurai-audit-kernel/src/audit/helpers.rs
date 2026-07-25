@@ -1024,12 +1024,27 @@ pub fn generated_zone_paths(ctx: &AuditContext) -> Vec<String> {
 }
 
 /// Returns the generated-zone paths that are safe to use as suppression hints
-/// for language scans. Paths that point at protected control-plane or source
-/// roots stay visible to the auditor even if they are declared here.
+/// for language scans. Reviewed-manual zones remain ordinary audit-visible
+/// source, and paths that point at protected control-plane or source roots stay
+/// visible to the auditor even if they are declared here.
 pub fn generated_zone_suppression_paths(ctx: &AuditContext) -> Vec<String> {
-    generated_zone_paths(ctx)
+    let path = ctx.root.join("agent/generated-zones.toml");
+    if !path.exists() {
+        return vec![];
+    }
+    let Ok(text) = std::fs::read_to_string(&path) else {
+        return vec![];
+    };
+    let Ok(file) = toml::from_str::<crate::commands::context_data::GeneratedZonesFile>(&text)
+    else {
+        return vec![];
+    };
+    file.zone
         .into_iter()
-        .filter(|zone| !crate::audit::fs::is_generated_zone_protected_path(zone))
+        .filter(|zone| zone.write_policy.trim() != "reviewed_manual")
+        .map(|zone| zone.path.trim().to_string())
+        .filter(|zone_path| !zone_path.is_empty())
+        .filter(|zone_path| !crate::audit::fs::is_generated_zone_protected_path(zone_path))
         .collect()
 }
 

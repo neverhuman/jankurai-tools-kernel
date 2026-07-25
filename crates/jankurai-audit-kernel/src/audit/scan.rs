@@ -3471,6 +3471,75 @@ write_policy = "reviewed_manual"
     }
 
     #[test]
+    fn reviewed_manual_directory_remains_visible_to_python_language_and_comment_scans() {
+        let dir = tempdir().unwrap();
+        let root = dir.path();
+        std::fs::create_dir_all(root.join("agent")).unwrap();
+        std::fs::create_dir_all(root.join("sdk")).unwrap();
+        std::fs::create_dir_all(root.join("generated-sdk")).unwrap();
+        std::fs::write(
+            root.join("agent/generated-zones.toml"),
+            r#"[[zone]]
+path = "sdk/"
+source = "contracts/openapi.yaml"
+command = "cargo test --test contract"
+read_only = true
+write_policy = "reviewed_manual"
+
+[[zone]]
+path = "generated-sdk/"
+source = "contracts/openapi.yaml"
+command = "cargo run -- generate"
+read_only = true
+write_policy = "generator_only"
+"#,
+        )
+        .unwrap();
+
+        let hostile_typescript = "// eslint-disable\n// skip auth\nexport const x = 1;\n";
+        let mut ctx = zone_edit_ctx(root.to_path_buf());
+        ctx.all_files = vec![
+            product_file("sdk/client.py", "def predict():\n    return 1\n"),
+            product_file("sdk/client.ts", hostile_typescript),
+            product_file("generated-sdk/client.ts", hostile_typescript),
+        ];
+        ctx.scope_files = ctx.all_files.clone();
+
+        assert!(
+            generated_zone_existence_hits(&ctx).is_empty(),
+            "an existing reviewed directory needs no synthetic header"
+        );
+        assert_eq!(
+            crate::audit::helpers::generated_zone_suppression_paths(&ctx),
+            vec!["generated-sdk/".to_string()],
+            "only generator-owned output may suppress language scans"
+        );
+        let python_hits = crate::audit::helpers::bad_python_path_hits(&ctx);
+        assert_eq!(python_hits.len(), 1, "reviewed Python must remain visible");
+        assert_eq!(python_hits[0].rel_path, "sdk/client.py");
+
+        let language_hits = language_bad_behavior_hits(&ctx);
+        assert!(
+            language_hits.iter().any(|hit| {
+                hit.path == "sdk/client.ts" && hit.matched_term == "typescript.suppress.ts-nocheck"
+            }),
+            "reviewed TypeScript must remain visible to language rules: {language_hits:?}"
+        );
+        assert!(
+            language_hits.iter().any(|hit| {
+                hit.path == "sdk/client.ts" && hit.matched_term == "comment-hygiene.hard"
+            }),
+            "reviewed source must remain visible to comment rules: {language_hits:?}"
+        );
+        assert!(
+            language_hits
+                .iter()
+                .all(|hit| hit.path != "generated-sdk/client.ts"),
+            "generator-only output must retain suppression: {language_hits:?}"
+        );
+    }
+
+    #[test]
     fn generator_only_zone_still_requires_generated_identity() {
         let dir = tempdir().unwrap();
         let root = dir.path();
