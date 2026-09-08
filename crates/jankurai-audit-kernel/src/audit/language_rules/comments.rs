@@ -465,20 +465,14 @@ fn tier2_hit_for_comment(
         .iter()
         .find(|&&m| find_word_bounded(&lower, m).is_some());
 
-    let marker = match marker {
-        Some(m) => *m,
-        None => return None,
-    };
+    let marker = *marker?;
 
     // Check if any context noun co-occurs (word-bounded)
     let context = TIER2_CONTEXT_NOUNS
         .iter()
         .find(|&&noun| find_word_bounded(&lower, noun).is_some());
 
-    let context_noun = match context {
-        Some(n) => *n,
-        None => return None,
-    };
+    let context_noun = *context?;
 
     let snippet = file
         .text
