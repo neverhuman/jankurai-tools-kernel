@@ -1,6 +1,6 @@
 {
-  "report_fingerprint": "sha256:f77b5cfbeece72aa2528fc1286afcfc14d0e634af2815a257c9a5524217e3607",
-  "input_fingerprint": "sha256:5298ab36c9138df5a837c75bcbeb1c36cd61fa29224ea8c57f8550795418d209",
+  "report_fingerprint": "sha256:6efa967f68a354bb5a1e1665263169dc83bf7ad28bd13e518b654e6d8139ab0d",
+  "input_fingerprint": "sha256:6d1b275c536b181b328401013f57f4089543dec593b536e1f5f4106b5814447f",
   "policy_fingerprint": "sha256:e26487514dae6a17fcad044d46db097316671c8cf15aa379b19c37ea0d8393d6",
   "manifest_fingerprints": {
     "owner_map": "sha256:2b8ed4302fbb26f34e105c5c410aa4fa3ec04550424e402691c3db275458e69f",
@@ -8,14 +8,14 @@
     "generated_zones": "sha256:4d11908de1212ab956042582ca4b23248475c9addddd6d2cea21fbffaa31ae67",
     "boundaries": "sha256:a7b22e06e4047d233467452bbba6c5bdd368e7bd5621d078776e3730554fd115",
     "proof_lanes": "sha256:5381b43bd999d4709cf819049ecc8fc16f294203b31f150653e134b964e0ef63",
-    "standard_version": "sha256:f7980626693e8ba6485c82d64d620d9f9229d418bb47843ee925b939fe1696f6"
+    "standard_version": "sha256:d8b70160f1ad0f0795ca65a0672dbc1fe357e9a9b3efb9a2e6da2af028ed4e71"
   },
-  "dirty_worktree": true,
-  "generated_at": "1781262768",
+  "dirty_worktree": false,
+  "generated_at": "1788927799",
   "schema_url": "schemas/repo-score.schema.json",
   "standard": "jankurai",
   "standard_version": "0.9.0",
-  "auditor_version": "1.6.0",
+  "auditor_version": "1.7.0",
   "schema_version": "1.9.0",
   "paper_edition": "2026.05-ed8",
   "target_stack_id": "rust-ts-vite-react-postgres-bounded-python",
@@ -24,81 +24,26 @@
   "observed_conformance_level": "HL2",
   "conformance_decision": "block",
   "conformance_blockers": [
-    "HLT-023-INPUT-BOUNDARY-GAP on crates/jankurai-audit-kernel/src/audit/helpers.rs",
-    "HLT-001-DEAD-MARKER on crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
-    "HLT-001-DEAD-MARKER on crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-029-RUST-BAD-BEHAVIOR on crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-    "HLT-041-COMMENT-HYGIENE on crates/jankurai-audit-kernel/src/audit/scan.rs"
+    "HLT-002-GENERATED-MUTATION on agent/generated-zones.toml"
   ],
-  "repo": "/home/ubuntu/jankurai-split/jankurai-tools-kernel",
-  "run_id": "1781262768",
-  "started_at": "1781262768",
-  "elapsed_ms": 32736,
+  "repo": ".",
+  "run_id": "1788927799",
+  "started_at": "1788927799",
+  "elapsed_ms": 4420,
   "scope": {
     "mode": "full",
     "paths": []
   },
-  "score": 68,
-  "raw_score": 72,
+  "score": 89,
+  "raw_score": 89,
   "decision": {
-    "status": "fail",
+    "status": "advisory",
     "minimum_score": 85,
-    "passed": false,
-    "hard_findings": 56,
-    "soft_findings": 6,
+    "passed": true,
+    "hard_findings": 1,
+    "soft_findings": 4,
     "ratchet": {
-      "baseline_score": 68,
+      "baseline_score": 89,
       "allowed_drop": 0,
       "passed": false,
       "score_delta": 0,
@@ -111,14 +56,14 @@
     }
   },
   "git": {
-    "head": "c10c3d8",
+    "head": "ecbcbbc",
     "base": null,
     "changed_files": 0,
     "mode": "full",
-    "dirty_worktree": true
+    "dirty_worktree": false
   },
   "policy": {
-    "path": "/home/ubuntu/jankurai-split/jankurai-tools-kernel/agent/audit-policy.toml",
+    "path": "./agent/audit-policy.toml",
     "minimum_score": 85,
     "fail_on": [
       "critical",
@@ -128,20 +73,14 @@
       "medium",
       "low"
     ],
-    "mode": "standard",
+    "mode": "advisory",
     "standard_version": "0.9.0",
-    "auditor_version": "1.6.10",
+    "auditor_version": "1.7.0",
     "schema_version": "1.9.0",
     "paper_edition": "2026.05-ed8",
     "target_stack": "rust-ts-vite-react-postgres-bounded-python"
   },
-  "caps_applied": [
-    "vibe-placeholders-in-product-code",
-    "fallback-soup-in-product-code",
-    "input-boundary-gap",
-    "rust-bad-behavior",
-    "comment-hygiene-dangerous-residue"
-  ],
+  "caps_applied": [],
   "hard_rules": [
     {
       "id": "no-root-agent-instructions",
@@ -332,8 +271,8 @@
     {
       "name": "Ownership and navigation surface",
       "weight": 13,
-      "score": 86,
-      "weighted_points": 11.18,
+      "score": 100,
+      "weighted_points": 13.0,
       "evidence": [
         "root `AGENTS.md` present",
         "owner map present",
@@ -343,23 +282,20 @@
         "reference-profile cell `ops` has local AGENTS.md guidance",
         "root `README.md` routes to workspace layout",
         "owner map covers audited paths",
-        "test map covers audited paths",
-        "authored code file exceeds 500 LOC",
-        "authored code file exceeds 1000 LOC"
+        "test map covers audited paths"
       ],
       "notes": []
     },
     {
       "name": "Contract and boundary integrity",
       "weight": 13,
-      "score": 100,
-      "weighted_points": 13.0,
+      "score": 95,
+      "weighted_points": 12.35,
       "evidence": [
         "contract surface found",
         "generated contract artifacts found",
         "boundary manifest present",
         "machine-readable schemas present",
-        "Rust typed boundary helpers found",
         "all contract sources have generated zone entries",
         "schema/tooling contract posture is clean"
       ],
@@ -394,60 +330,45 @@
         "secret or dependency scan tooling found",
         "security lane present",
         "agent-readiness audit gate found in CI",
-        "rust bad-behavior hard findings: 52",
         "ci bad-behavior advisory signals: 1",
         "secret scanning command is operational"
       ],
-      "notes": [
-        "rust hard findings are scored through the language-rule catalog"
-      ]
+      "notes": []
     },
     {
       "name": "Code shape and semantic surface",
       "weight": 12,
-      "score": 0,
-      "weighted_points": 0.0,
+      "score": 90,
+      "weighted_points": 10.8,
       "evidence": [
-        "largest authored code file: crates/jankurai-audit-kernel/src/audit/scan.rs (3165 LOC)",
-        "code file exceeds 500 LOC",
-        "code file exceeds 1000 LOC",
-        "copy-code advisory classes found: 46 (advisory only, no score impact)",
-        "TODO/stub marker found",
-        "fallback soup marker found",
-        "rust bad-behavior hard findings: 52",
-        "ci bad-behavior advisory signals: 1",
-        "comments bad-behavior hard findings: 1"
+        "no authored adopter product code files in scope"
       ],
-      "notes": [
-        "rust hard behavior is already captured by the language-rule catalog"
-      ]
+      "notes": []
     },
     {
       "name": "Data truth and workflow safety",
       "weight": 8,
-      "score": 60,
-      "weighted_points": 4.8,
+      "score": 90,
+      "weighted_points": 7.2,
       "evidence": [
-        "constraint or RLS language found"
+        "no adopter product DB surface; standards/tooling repo classification is explicit"
       ],
       "notes": []
     },
     {
       "name": "Observability and repair evidence",
       "weight": 8,
-      "score": 100,
-      "weighted_points": 8.0,
+      "score": 71,
+      "weighted_points": 5.68,
       "evidence": [
-        "observability libraries or patterns found",
         "ops/observability directory present",
         "repair receipts or raw artifact language found",
         "repair queue schema is present",
         "report attestation schema is present",
-        "agent-friendly exception pattern found",
         "repair receipt guidance is documented"
       ],
       "notes": [
-        "free-form logging appears in scope"
+        "no agent-friendly exception pattern found"
       ]
     },
     {
@@ -468,21 +389,20 @@
     {
       "name": "Jankurai tool adoption and CI replacement",
       "weight": 7,
-      "score": 30,
-      "weighted_points": 2.1,
+      "score": 94,
+      "weighted_points": 6.58,
       "evidence": [
         "control-plane files present",
-        "applicable=18",
-        "configured=18",
-        "ci_evidence=0",
-        "artifact_verified=0"
+        "applicable=16",
+        "configured=16",
+        "ci_evidence=15",
+        "artifact_verified=13"
       ],
       "notes": [
         "some applicable tools lack CI evidence",
-        "missing CI evidence for `audit-ci`",
-        "missing CI evidence for `proof-routing`",
         "missing CI evidence for `proofbind`",
-        "missing CI evidence for `proofmark-rust`"
+        "missing CI evidence for `proofmark-rust`",
+        "missing CI evidence for `copy-code`"
       ]
     },
     {
@@ -498,12 +418,13 @@
     {
       "name": "Build speed signals",
       "weight": 4,
-      "score": 60,
-      "weighted_points": 2.4,
+      "score": 70,
+      "weighted_points": 2.8,
       "evidence": [
         "build acceleration markers found",
         "targeted test/build commands found",
-        "locked dependency graph present"
+        "locked dependency graph present",
+        "CI cache hint found"
       ],
       "notes": []
     }
@@ -514,6 +435,7 @@
     "missing_categories": [],
     "evidence": {
       "accessibility": [
+        "agent/baselines/main.repo-score.json",
         "crates/jankurai-audit-kernel/src/audit/helpers.rs"
       ],
       "api_mocks": [],
@@ -532,6 +454,7 @@
       "layout_stability": [],
       "playwright_visual": [],
       "storybook": [
+        "agent/baselines/main.repo-score.json",
         "crates/jankurai-audit-kernel/src/audit/helpers.rs",
         "schemas/ux-qa-policy.schema.json"
       ],
@@ -540,29 +463,29 @@
   },
   "tool_adoption": {
     "control_plane_present": true,
-    "applicable_count": 18,
-    "configured_count": 18,
-    "ci_evidence_count": 0,
-    "artifact_verified_count": 0,
-    "replaced_count": 0,
+    "applicable_count": 16,
+    "configured_count": 16,
+    "ci_evidence_count": 15,
+    "artifact_verified_count": 13,
+    "replaced_count": 15,
     "items": [
       {
         "id": "audit-ci",
         "category": "audit",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "manual repo scoring",
           "ad hoc score gates"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: .jankurai/repo-score.json, .jankurai/repo-score.md"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai audit . --mode advisory --json .jankurai/repo-score.json --md .jankurai/repo-score.md",
         "ci_command": "jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md",
         "artifact_paths": [
@@ -575,18 +498,18 @@
         "category": "proof",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "ad hoc proof lane selection",
           "manual proof receipts"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: .jankurai/repo-score.json, .jankurai/repo-score.md, target/jankurai/repair-queue.jsonl"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai proof . --changed-from origin/main --out target/jankurai/proof-plan.json --md target/jankurai/proof-plan.md",
         "ci_command": "jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md",
         "artifact_paths": [
@@ -600,17 +523,18 @@
         "category": "proof",
         "mode": "advisory",
         "applicable": true,
-        "status": "configured",
+        "status": "ci_evidence",
         "replaced_tools": [
           "manual changed-surface routing",
           "ad hoc proof obligation lists"
         ],
         "evidence": [
           "mode=advisory",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow"
         ],
         "missing": [
-          "CI command evidence"
+          "artifact upload reference"
         ],
         "local_command": "jankurai proofbind verify . --changed-from origin/main",
         "ci_command": "jankurai proofbind verify . --changed-from origin/main",
@@ -624,17 +548,18 @@
         "category": "proof",
         "mode": "advisory",
         "applicable": true,
-        "status": "configured",
+        "status": "ci_evidence",
         "replaced_tools": [
           "line-only coverage review",
           "manual in-diff mutation review"
         ],
         "evidence": [
           "mode=advisory",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow"
         ],
         "missing": [
-          "CI command evidence"
+          "artifact upload reference"
         ],
         "local_command": "jankurai proofmark rust . --obligations target/jankurai/proofbind/obligations.json",
         "ci_command": "jankurai proofmark rust . --obligations target/jankurai/proofbind/obligations.json",
@@ -672,7 +597,7 @@
         "category": "security",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "gitleaks",
           "dependency review",
@@ -680,11 +605,11 @@
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: target/jankurai/security/evidence.json"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai security run . --out target/jankurai/security/evidence.json",
         "ci_command": "jankurai security run . --out target/jankurai/security/evidence.json",
         "artifact_paths": [
@@ -696,7 +621,7 @@
         "category": "security",
         "mode": "advisory",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "mutable workflow refs",
           "secret echo/debug workflow checks",
@@ -704,11 +629,11 @@
         ],
         "evidence": [
           "mode=advisory",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: target/jankurai/language-bad-behavior.log"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "cargo test -p jankurai --test language_bad_behavior",
         "ci_command": "cargo test -p jankurai --test language_bad_behavior",
         "artifact_paths": [
@@ -720,7 +645,7 @@
         "category": "audit",
         "mode": "advisory",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "destructive git automation",
           "force-push release scripts",
@@ -728,11 +653,11 @@
         ],
         "evidence": [
           "mode=advisory",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: target/jankurai/language-bad-behavior.log"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "cargo test -p jankurai --test language_bad_behavior",
         "ci_command": "cargo test -p jankurai --test language_bad_behavior",
         "artifact_paths": [
@@ -744,7 +669,7 @@
         "category": "release",
         "mode": "advisory",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "manual release checklist",
           "ad hoc tag and artifact review",
@@ -752,11 +677,11 @@
         ],
         "evidence": [
           "mode=advisory",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: target/jankurai/language-bad-behavior.log"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "cargo test -p jankurai --test language_bad_behavior",
         "ci_command": "cargo test -p jankurai --test language_bad_behavior",
         "artifact_paths": [
@@ -808,18 +733,18 @@
         "category": "contract",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "handwritten contract drift checks",
           "openapi diff"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: .jankurai/repo-score.json, .jankurai/repo-score.md"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai audit . --mode advisory --json .jankurai/repo-score.json --md .jankurai/repo-score.md",
         "ci_command": "jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md",
         "artifact_paths": [
@@ -831,18 +756,15 @@
         "id": "rust-witness",
         "category": "rust",
         "mode": "auto",
-        "applicable": true,
-        "status": "configured",
+        "applicable": false,
+        "status": "not_applicable",
         "replaced_tools": [
           "manual witness graphing"
         ],
         "evidence": [
-          "mode=auto",
-          "tool-adoption config entry present"
+          "mode=auto"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai rust witness build .",
         "ci_command": "jankurai rust witness build .",
         "artifact_paths": [
@@ -854,17 +776,17 @@
         "category": "audit",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "manual vibe-coding coverage spreadsheet"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: target/jankurai/vibe-coverage.json, target/jankurai/vibe-coverage.md"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai vibe coverage --source agent/vibe-coverage.toml --tips tips/vibe_coding --json target/jankurai/vibe-coverage.json --md target/jankurai/vibe-coverage.md",
         "ci_command": "jankurai vibe coverage --source agent/vibe-coverage.toml --tips tips/vibe_coding --json target/jankurai/vibe-coverage.json --md target/jankurai/vibe-coverage.md",
         "artifact_paths": [
@@ -877,18 +799,18 @@
         "category": "proof",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "manual coverage report review",
           "ad hoc mutation survivor review"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: target/jankurai/coverage/coverage-audit.json, target/jankurai/coverage/coverage-audit.md"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai coverage audit . --config agent/coverage-sources.toml --json target/jankurai/coverage/coverage-audit.json --md target/jankurai/coverage/coverage-audit.md",
         "ci_command": "jankurai coverage audit . --config agent/coverage-sources.toml --json target/jankurai/coverage/coverage-audit.json --md target/jankurai/coverage/coverage-audit.md",
         "artifact_paths": [
@@ -901,17 +823,17 @@
         "category": "security",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "manual authz matrix review"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: .jankurai/repo-score.json, .jankurai/repo-score.md"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai audit . --mode advisory --json .jankurai/repo-score.json --md .jankurai/repo-score.md",
         "ci_command": "jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md",
         "artifact_paths": [
@@ -923,18 +845,15 @@
         "id": "input-boundary",
         "category": "security",
         "mode": "auto",
-        "applicable": true,
-        "status": "configured",
+        "applicable": false,
+        "status": "not_applicable",
         "replaced_tools": [
           "manual unsafe sink review"
         ],
         "evidence": [
-          "mode=auto",
-          "tool-adoption config entry present"
+          "mode=auto"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai audit . --mode advisory --json .jankurai/repo-score.json --md .jankurai/repo-score.md",
         "ci_command": "jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md",
         "artifact_paths": [
@@ -947,17 +866,17 @@
         "category": "security",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "manual MCP/tool trust review"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: .jankurai/repo-score.json, .jankurai/repo-score.md"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai audit . --mode advisory --json .jankurai/repo-score.json --md .jankurai/repo-score.md",
         "ci_command": "jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md",
         "artifact_paths": [
@@ -970,17 +889,17 @@
         "category": "release",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "manual launch checklist"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: .jankurai/repo-score.json, .jankurai/repo-score.md"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai audit . --mode advisory --json .jankurai/repo-score.json --md .jankurai/repo-score.md",
         "ci_command": "jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md",
         "artifact_paths": [
@@ -993,17 +912,17 @@
         "category": "release",
         "mode": "auto",
         "applicable": true,
-        "status": "configured",
+        "status": "artifact_verified",
         "replaced_tools": [
           "manual spend review"
         ],
         "evidence": [
           "mode=auto",
-          "tool-adoption config entry present"
+          "tool-adoption config entry present",
+          "CI command found in workflow",
+          "artifact uploads found: .jankurai/repo-score.json, .jankurai/repo-score.md"
         ],
-        "missing": [
-          "CI command evidence"
-        ],
+        "missing": [],
         "local_command": "jankurai audit . --mode advisory --json .jankurai/repo-score.json --md .jankurai/repo-score.md",
         "ci_command": "jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md",
         "artifact_paths": [
@@ -1013,7 +932,7 @@
       }
     ],
     "evidence": {
-      "applicable_count": 18,
+      "applicable_count": 16,
       "applicable_tools": [
         "audit-ci",
         "proof-routing",
@@ -1025,21 +944,49 @@
         "git-bad-behavior",
         "release-bad-behavior",
         "contract-drift",
-        "rust-witness",
         "vibe-coverage",
         "coverage-evidence",
         "authz-matrix",
-        "input-boundary",
         "agent-tool-supply",
         "release-readiness",
         "cost-budget"
       ],
-      "artifact_verified_count": 0,
-      "artifact_verified_tools": [],
-      "ci_evidence_count": 0,
-      "ci_evidence_tools": [],
+      "artifact_verified_count": 13,
+      "artifact_verified_tools": [
+        "audit-ci",
+        "proof-routing",
+        "security",
+        "ci-bad-behavior",
+        "git-bad-behavior",
+        "release-bad-behavior",
+        "contract-drift",
+        "vibe-coverage",
+        "coverage-evidence",
+        "authz-matrix",
+        "agent-tool-supply",
+        "release-readiness",
+        "cost-budget"
+      ],
+      "ci_evidence_count": 15,
+      "ci_evidence_tools": [
+        "audit-ci",
+        "proof-routing",
+        "proofbind",
+        "proofmark-rust",
+        "security",
+        "ci-bad-behavior",
+        "git-bad-behavior",
+        "release-bad-behavior",
+        "contract-drift",
+        "vibe-coverage",
+        "coverage-evidence",
+        "authz-matrix",
+        "agent-tool-supply",
+        "release-readiness",
+        "cost-budget"
+      ],
       "config_present": true,
-      "configured_count": 18,
+      "configured_count": 16,
       "configured_tools": [
         "audit-ci",
         "proof-routing",
@@ -1051,11 +998,9 @@
         "git-bad-behavior",
         "release-bad-behavior",
         "contract-drift",
-        "rust-witness",
         "vibe-coverage",
         "coverage-evidence",
         "authz-matrix",
-        "input-boundary",
         "agent-tool-supply",
         "release-readiness",
         "cost-budget"
@@ -1063,24 +1008,9 @@
       "control_plane_present": true
     },
     "missing": [
-      "audit-ci",
-      "proof-routing",
       "proofbind",
       "proofmark-rust",
-      "copy-code",
-      "security",
-      "ci-bad-behavior",
-      "git-bad-behavior",
-      "release-bad-behavior",
-      "contract-drift",
-      "rust-witness",
-      "vibe-coverage",
-      "coverage-evidence",
-      "authz-matrix",
-      "input-boundary",
-      "agent-tool-supply",
-      "release-readiness",
-      "cost-budget"
+      "copy-code"
     ]
   },
   "security_evidence": {},
@@ -1090,9 +1020,9 @@
   "copy_code": {
     "schema_version": "1.1.0",
     "generated_by": "jankurai copy-code",
-    "generated_at": "2026-06-12T11:12:16.805818844+00:00",
-    "repo": "/home/ubuntu/jankurai-split/jankurai-tools-kernel",
-    "auditor_version": "1.6.10",
+    "generated_at": "2026-09-09T04:23:15.445987206+00:00",
+    "repo": ".",
+    "auditor_version": "1.7.0",
     "status": "review",
     "policy": {
       "active_source_only": true,
@@ -1128,20 +1058,20 @@
       ]
     },
     "summary": {
-      "files_scanned": 164,
+      "files_scanned": 173,
       "files_considered": 45,
       "active_files": 45,
       "exact_file_classes": 0,
       "hard_classes": 0,
-      "warning_classes": 46,
+      "warning_classes": 45,
       "hard_instances": 0,
-      "warning_instances": 176,
-      "duplicate_lines": 58,
-      "duplicate_tokens": 208,
-      "duplicate_bytes": 1926,
-      "total_redundant_lines": 147,
-      "total_redundant_tokens": 563,
-      "total_redundant_bytes": 4697
+      "warning_instances": 173,
+      "duplicate_lines": 57,
+      "duplicate_tokens": 212,
+      "duplicate_bytes": 1929,
+      "total_redundant_lines": 145,
+      "total_redundant_tokens": 558,
+      "total_redundant_bytes": 4629
     },
     "classes": [
       {
@@ -1180,15 +1110,15 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
             "language": "rust",
-            "start_line": 566,
-            "end_line": 567,
+            "start_line": 570,
+            "end_line": 571,
             "unit_name": "hard_findings"
           },
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
             "language": "rust",
-            "start_line": 581,
-            "end_line": 582,
+            "start_line": 585,
+            "end_line": 586,
             "unit_name": "advisory_findings"
           },
           {
@@ -1306,8 +1236,8 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
             "language": "rust",
-            "start_line": 732,
-            "end_line": 733,
+            "start_line": 736,
+            "end_line": 737,
             "unit_name": "lint_suppression_hits"
           },
           {
@@ -1405,8 +1335,8 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
             "language": "rust",
-            "start_line": 548,
-            "end_line": 554,
+            "start_line": 552,
+            "end_line": 558,
             "unit_name": "catalog"
           },
           {
@@ -1468,15 +1398,15 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/helpers.rs",
             "language": "rust",
-            "start_line": 880,
-            "end_line": 881,
+            "start_line": 887,
+            "end_line": 888,
             "unit_name": "product_files"
           },
           {
             "path": "crates/jankurai-audit-kernel/src/audit/helpers.rs",
             "language": "rust",
-            "start_line": 946,
-            "end_line": 947,
+            "start_line": 953,
+            "end_line": 954,
             "unit_name": "bad_python_path_hits"
           },
           {
@@ -1524,9 +1454,93 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 1651,
-            "end_line": 1652,
+            "start_line": 1690,
+            "end_line": 1691,
             "unit_name": "generated_zone_manifest_present"
+          }
+        ]
+      },
+      {
+        "id": "copy-code-body-rust-6f0d54778bbd91bb",
+        "kind": "exact_unit_different_name",
+        "severity": "warning",
+        "confidence": "medium",
+        "language": "rust",
+        "duplicate_lines": 1,
+        "duplicate_tokens": 4,
+        "duplicate_bytes": 42,
+        "instance_count": 9,
+        "total_redundant_lines": 8,
+        "total_redundant_tokens": 32,
+        "total_redundant_bytes": 336,
+        "effective_severity": "warning",
+        "hard_fail": false,
+        "fingerprint": "fb89528f6d85a6c5",
+        "reason": "same body appears under different names across files",
+        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
+        "instances": [
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/ci.rs",
+            "language": "rust",
+            "start_line": 526,
+            "end_line": 527,
+            "unit_name": "privileged_runner_hit"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/gittools.rs",
+            "language": "rust",
+            "start_line": 173,
+            "end_line": 174,
+            "unit_name": "configures_hook_tooling"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/release.rs",
+            "language": "rust",
+            "start_line": 427,
+            "end_line": 428,
+            "unit_name": "has_tag_verification_evidence"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/release.rs",
+            "language": "rust",
+            "start_line": 441,
+            "end_line": 442,
+            "unit_name": "has_integrity_evidence"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/release.rs",
+            "language": "rust",
+            "start_line": 462,
+            "end_line": 463,
+            "unit_name": "has_untrusted_release_trigger"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
+            "language": "rust",
+            "start_line": 2266,
+            "end_line": 2267,
+            "unit_name": "future_hostile_text_term"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/source_context.rs",
+            "language": "rust",
+            "start_line": 358,
+            "end_line": 359,
+            "unit_name": "looks_like_scan_example"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/boundaries/sql.rs",
+            "language": "rust",
+            "start_line": 13,
+            "end_line": 14,
+            "unit_name": "destructive_marker"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/boundaries/streaming.rs",
+            "language": "rust",
+            "start_line": 12,
+            "end_line": 13,
+            "unit_name": "streaming_client_marker"
           }
         ]
       },
@@ -1608,79 +1622,65 @@
         ]
       },
       {
-        "id": "copy-code-body-rust-6f0d54778bbd91bb",
+        "id": "copy-code-body-rust-a240a080d2fd0150",
         "kind": "exact_unit_different_name",
         "severity": "warning",
         "confidence": "medium",
         "language": "rust",
         "duplicate_lines": 1,
-        "duplicate_tokens": 4,
-        "duplicate_bytes": 42,
-        "instance_count": 8,
-        "total_redundant_lines": 7,
-        "total_redundant_tokens": 28,
-        "total_redundant_bytes": 294,
+        "duplicate_tokens": 0,
+        "duplicate_bytes": 5,
+        "instance_count": 6,
+        "total_redundant_lines": 5,
+        "total_redundant_tokens": 0,
+        "total_redundant_bytes": 25,
         "effective_severity": "warning",
         "hard_fail": false,
-        "fingerprint": "908429b0bafda833",
+        "fingerprint": "8bb003c9f001b5ad",
         "reason": "same body appears under different names across files",
         "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
         "instances": [
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/ci.rs",
             "language": "rust",
-            "start_line": 526,
-            "end_line": 527,
-            "unit_name": "privileged_runner_hit"
+            "start_line": 540,
+            "end_line": 541,
+            "unit_name": "secret_path_hit"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/git.rs",
+            "language": "rust",
+            "start_line": 433,
+            "end_line": 434,
+            "unit_name": "weak_commit_message"
           },
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/gittools.rs",
             "language": "rust",
-            "start_line": 173,
-            "end_line": 174,
-            "unit_name": "configures_hook_tooling"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/release.rs",
-            "language": "rust",
             "start_line": 427,
             "end_line": 428,
-            "unit_name": "has_tag_verification_evidence"
+            "unit_name": "destructive_hook_hit"
           },
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/release.rs",
             "language": "rust",
-            "start_line": 441,
-            "end_line": 442,
-            "unit_name": "has_integrity_evidence"
+            "start_line": 203,
+            "end_line": 204,
+            "unit_name": "has_release_command"
           },
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/release.rs",
             "language": "rust",
-            "start_line": 462,
-            "end_line": 463,
-            "unit_name": "has_untrusted_release_trigger"
+            "start_line": 382,
+            "end_line": 383,
+            "unit_name": "skips_release_verification"
           },
           {
-            "path": "crates/jankurai-audit-kernel/src/audit/source_context.rs",
+            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 358,
-            "end_line": 359,
-            "unit_name": "looks_like_scan_example"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/boundaries/sql.rs",
-            "language": "rust",
-            "start_line": 13,
-            "end_line": 14,
-            "unit_name": "destructive_marker"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/boundaries/streaming.rs",
-            "language": "rust",
-            "start_line": 12,
-            "end_line": 13,
-            "unit_name": "streaming_client_marker"
+            "start_line": 1822,
+            "end_line": 1823,
+            "unit_name": "line_has_db_driver"
           }
         ]
       },
@@ -1707,8 +1707,8 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
             "language": "rust",
-            "start_line": 566,
-            "end_line": 567,
+            "start_line": 570,
+            "end_line": 571,
             "unit_name": "hard_findings"
           },
           {
@@ -1799,62 +1799,6 @@
         ]
       },
       {
-        "id": "copy-code-body-rust-6945669db995c77a",
-        "kind": "exact_unit_different_name",
-        "severity": "warning",
-        "confidence": "medium",
-        "language": "rust",
-        "duplicate_lines": 1,
-        "duplicate_tokens": 4,
-        "duplicate_bytes": 37,
-        "instance_count": 5,
-        "total_redundant_lines": 4,
-        "total_redundant_tokens": 16,
-        "total_redundant_bytes": 148,
-        "effective_severity": "warning",
-        "hard_fail": false,
-        "fingerprint": "24421fc2ee2334ad",
-        "reason": "same body appears under different names across files",
-        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
-        "instances": [
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/finding_builder.rs",
-            "language": "rust",
-            "start_line": 352,
-            "end_line": 353,
-            "unit_name": "ctx_with_owner_map"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 2469,
-            "end_line": 2470,
-            "unit_name": "generated_zone_protected_paths_do_not_suppress_protected_sources"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 3016,
-            "end_line": 3017,
-            "unit_name": "generated_zone_edit_flags_hand_edit_in_governed_zone"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 3061,
-            "end_line": 3062,
-            "unit_name": "generated_zone_edit_skips_auditor_output_and_lockfile"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 3139,
-            "end_line": 3140,
-            "unit_name": "generated_zone_edit_ignores_edits_outside_zones"
-          }
-        ]
-      },
-      {
         "id": "copy-code-body-rust-278727a0d0b7932a",
         "kind": "exact_unit_different_name",
         "severity": "warning",
@@ -1876,15 +1820,15 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 1595,
-            "end_line": 1599,
+            "start_line": 1634,
+            "end_line": 1638,
             "unit_name": "repo_score_json_has_generated_identity"
           },
           {
             "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 1620,
-            "end_line": 1624,
+            "start_line": 1659,
+            "end_line": 1663,
             "unit_name": "package_lock_json_has_native_shape"
           }
         ]
@@ -1922,6 +1866,62 @@
             "start_line": 475,
             "end_line": 479,
             "unit_name": "push_once"
+          }
+        ]
+      },
+      {
+        "id": "copy-code-body-rust-634fcef9833369c9",
+        "kind": "exact_unit_different_name",
+        "severity": "warning",
+        "confidence": "medium",
+        "language": "rust",
+        "duplicate_lines": 1,
+        "duplicate_tokens": 2,
+        "duplicate_bytes": 20,
+        "instance_count": 5,
+        "total_redundant_lines": 4,
+        "total_redundant_tokens": 8,
+        "total_redundant_bytes": 80,
+        "effective_severity": "warning",
+        "hard_fail": false,
+        "fingerprint": "bb7f3ec7c0a4687b",
+        "reason": "same body appears under different names across files",
+        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
+        "instances": [
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
+            "language": "rust",
+            "start_line": 3024,
+            "end_line": 3025,
+            "unit_name": "fallback_hits_skips_comment_only_lines_and_keeps_real_error_hiding_fallbacks"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
+            "language": "rust",
+            "start_line": 3085,
+            "end_line": 3086,
+            "unit_name": "todo_hits_ignores_comments_and_test_scaffolding"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
+            "language": "rust",
+            "start_line": 3105,
+            "end_line": 3106,
+            "unit_name": "future_hostile_hits_ignore_rust_identifiers_and_benign_domain_language"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
+            "language": "rust",
+            "start_line": 3128,
+            "end_line": 3129,
+            "unit_name": "future_hostile_hits_keep_genuine_debt_language_in_rust_comments_and_strings"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
+            "language": "rust",
+            "start_line": 3242,
+            "end_line": 3243,
+            "unit_name": "duplicate_blocks_ignores_overlapping_windows_from_same_file"
           }
         ]
       },
@@ -1979,62 +1979,6 @@
             "start_line": 98,
             "end_line": 99,
             "unit_name": "catalog"
-          }
-        ]
-      },
-      {
-        "id": "copy-code-body-rust-a240a080d2fd0150",
-        "kind": "exact_unit_different_name",
-        "severity": "warning",
-        "confidence": "medium",
-        "language": "rust",
-        "duplicate_lines": 1,
-        "duplicate_tokens": 0,
-        "duplicate_bytes": 5,
-        "instance_count": 5,
-        "total_redundant_lines": 4,
-        "total_redundant_tokens": 0,
-        "total_redundant_bytes": 20,
-        "effective_severity": "warning",
-        "hard_fail": false,
-        "fingerprint": "2b83cfc09fbf386b",
-        "reason": "same body appears under different names across files",
-        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
-        "instances": [
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/ci.rs",
-            "language": "rust",
-            "start_line": 540,
-            "end_line": 541,
-            "unit_name": "secret_path_hit"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/git.rs",
-            "language": "rust",
-            "start_line": 433,
-            "end_line": 434,
-            "unit_name": "weak_commit_message"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/gittools.rs",
-            "language": "rust",
-            "start_line": 427,
-            "end_line": 428,
-            "unit_name": "destructive_hook_hit"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/release.rs",
-            "language": "rust",
-            "start_line": 203,
-            "end_line": 204,
-            "unit_name": "has_release_command"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/language_rules/release.rs",
-            "language": "rust",
-            "start_line": 382,
-            "end_line": 383,
-            "unit_name": "skips_release_verification"
           }
         ]
       },
@@ -2237,55 +2181,6 @@
         ]
       },
       {
-        "id": "copy-code-body-rust-634fcef9833369c9",
-        "kind": "exact_unit_different_name",
-        "severity": "warning",
-        "confidence": "medium",
-        "language": "rust",
-        "duplicate_lines": 1,
-        "duplicate_tokens": 2,
-        "duplicate_bytes": 20,
-        "instance_count": 4,
-        "total_redundant_lines": 3,
-        "total_redundant_tokens": 6,
-        "total_redundant_bytes": 60,
-        "effective_severity": "warning",
-        "hard_fail": false,
-        "fingerprint": "eb5f7183819ff78a",
-        "reason": "same body appears under different names across files",
-        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
-        "instances": [
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 2668,
-            "end_line": 2669,
-            "unit_name": "fallback_hits_skips_comment_only_lines_and_keeps_real_error_hiding_fallbacks"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 2729,
-            "end_line": 2730,
-            "unit_name": "todo_hits_ignores_comments_and_test_scaffolding"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 2749,
-            "end_line": 2750,
-            "unit_name": "future_hostile_hits_keep_runtime_strings_but_skip_local_bindings_and_comments"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 2839,
-            "end_line": 2840,
-            "unit_name": "duplicate_blocks_ignores_overlapping_windows_from_same_file"
-          }
-        ]
-      },
-      {
         "id": "copy-code-body-rust-78347c7b007272be",
         "kind": "exact_unit_different_name",
         "severity": "warning",
@@ -2435,8 +2330,8 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
             "language": "rust",
-            "start_line": 558,
-            "end_line": 559,
+            "start_line": 562,
+            "end_line": 563,
             "unit_name": "findings"
           },
           {
@@ -2477,22 +2372,22 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 1488,
-            "end_line": 1489,
+            "start_line": 1523,
+            "end_line": 1524,
             "unit_name": "streaming_runtime_hits"
           },
           {
             "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 1767,
-            "end_line": 1768,
+            "start_line": 1835,
+            "end_line": 1836,
             "unit_name": "wrong_layer_db_hits"
           },
           {
             "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 2097,
-            "end_line": 2098,
+            "start_line": 2451,
+            "end_line": 2452,
             "unit_name": "ci_hardening_hits"
           }
         ]
@@ -2541,48 +2436,6 @@
         ]
       },
       {
-        "id": "copy-code-body-rust-ffa022f09a4a1bc4",
-        "kind": "exact_unit_different_name",
-        "severity": "warning",
-        "confidence": "medium",
-        "language": "rust",
-        "duplicate_lines": 1,
-        "duplicate_tokens": 3,
-        "duplicate_bytes": 27,
-        "instance_count": 3,
-        "total_redundant_lines": 2,
-        "total_redundant_tokens": 6,
-        "total_redundant_bytes": 54,
-        "effective_severity": "warning",
-        "hard_fail": false,
-        "fingerprint": "be099b36d076010e",
-        "reason": "same body appears under different names across files",
-        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
-        "instances": [
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 2812,
-            "end_line": 2813,
-            "unit_name": "nearby_allow_suppresses_secret_hit"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 2937,
-            "end_line": 2938,
-            "unit_name": "secret_hits_flags_literal_string_credential"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-            "language": "rust",
-            "start_line": 2951,
-            "end_line": 2952,
-            "unit_name": "secret_hits_flags_jwt_access_token"
-          }
-        ]
-      },
-      {
         "id": "copy-code-body-rust-891eb21af285247c",
         "kind": "exact_unit_different_name",
         "severity": "warning",
@@ -2614,6 +2467,41 @@
             "start_line": 11,
             "end_line": 13,
             "unit_name": "write_markdown"
+          }
+        ]
+      },
+      {
+        "id": "copy-code-body-rust-8accb6e1819009ed",
+        "kind": "exact_unit_different_name",
+        "severity": "warning",
+        "confidence": "medium",
+        "language": "rust",
+        "duplicate_lines": 1,
+        "duplicate_tokens": 9,
+        "duplicate_bytes": 59,
+        "instance_count": 2,
+        "total_redundant_lines": 1,
+        "total_redundant_tokens": 9,
+        "total_redundant_bytes": 59,
+        "effective_severity": "warning",
+        "hard_fail": false,
+        "fingerprint": "a273efe1f0ed076a",
+        "reason": "same body appears under different names across files",
+        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
+        "instances": [
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/helpers.rs",
+            "language": "rust",
+            "start_line": 1007,
+            "end_line": 1008,
+            "unit_name": "generated_zone_paths"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/helpers.rs",
+            "language": "rust",
+            "start_line": 1030,
+            "end_line": 1031,
+            "unit_name": "generated_zone_suppression_paths"
           }
         ]
       },
@@ -2788,8 +2676,8 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 1430,
-            "end_line": 1431,
+            "start_line": 1465,
+            "end_line": 1466,
             "unit_name": "matches_monorepo_migration_segment"
           }
         ]
@@ -3042,6 +2930,41 @@
         ]
       },
       {
+        "id": "copy-code-body-rust-6945669db995c77a",
+        "kind": "exact_unit_different_name",
+        "severity": "warning",
+        "confidence": "medium",
+        "language": "rust",
+        "duplicate_lines": 1,
+        "duplicate_tokens": 4,
+        "duplicate_bytes": 37,
+        "instance_count": 2,
+        "total_redundant_lines": 1,
+        "total_redundant_tokens": 4,
+        "total_redundant_bytes": 37,
+        "effective_severity": "warning",
+        "hard_fail": false,
+        "fingerprint": "010418d93572e736",
+        "reason": "same body appears under different names across files",
+        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
+        "instances": [
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/finding_builder.rs",
+            "language": "rust",
+            "start_line": 352,
+            "end_line": 353,
+            "unit_name": "ctx_with_owner_map"
+          },
+          {
+            "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
+            "language": "rust",
+            "start_line": 2825,
+            "end_line": 2826,
+            "unit_name": "generated_zone_protected_paths_do_not_suppress_protected_sources"
+          }
+        ]
+      },
+      {
         "id": "copy-code-body-rust-435558f8a9a3b8e1",
         "kind": "exact_unit_different_name",
         "severity": "warning",
@@ -3105,8 +3028,8 @@
           {
             "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
             "language": "rust",
-            "start_line": 2019,
-            "end_line": 2020,
+            "start_line": 2373,
+            "end_line": 2374,
             "unit_name": "manifest_parse_findings"
           }
         ]
@@ -3143,41 +3066,6 @@
             "start_line": 288,
             "end_line": 289,
             "unit_name": "lane_for"
-          }
-        ]
-      },
-      {
-        "id": "copy-code-body-rust-cf2c9f6f02e65dc9",
-        "kind": "exact_unit_different_name",
-        "severity": "warning",
-        "confidence": "medium",
-        "language": "rust",
-        "duplicate_lines": 1,
-        "duplicate_tokens": 2,
-        "duplicate_bytes": 29,
-        "instance_count": 2,
-        "total_redundant_lines": 1,
-        "total_redundant_tokens": 2,
-        "total_redundant_bytes": 29,
-        "effective_severity": "warning",
-        "hard_fail": false,
-        "fingerprint": "a273efe1f0ed076a",
-        "reason": "same body appears under different names across files",
-        "recommended_action": "choose one owner for the shared body or intentionally differentiate the behavior",
-        "instances": [
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/helpers.rs",
-            "language": "rust",
-            "start_line": 1022,
-            "end_line": 1023,
-            "unit_name": "generated_zone_suppression_paths"
-          },
-          {
-            "path": "crates/jankurai-audit-kernel/src/audit/helpers.rs",
-            "language": "rust",
-            "start_line": 1032,
-            "end_line": 1033,
-            "unit_name": "generated_zone_protected_paths"
           }
         ]
       },
@@ -3572,30 +3460,6 @@
   "findings": [
     {
       "severity": "medium",
-      "category": "shape",
-      "path": ".",
-      "problem": "`Code shape and semantic surface` scored 0 below the standard floor of 85",
-      "agent_fix": "split large or ambiguous authored code into smaller semantic modules with focused tests",
-      "evidence": [
-        "largest authored code file: crates/jankurai-audit-kernel/src/audit/scan.rs (3165 LOC)",
-        "code file exceeds 500 LOC",
-        "code file exceeds 1000 LOC",
-        "copy-code advisory classes found: 46 (advisory only, no score impact)"
-      ],
-      "check_id": "HLT-001-DEAD-MARKER:shape",
-      "hardness": "soft",
-      "confidence": 0.76,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:beba828cb567a175fdf8fc2f4d17592f620aa3e486a64fcaf2074ffc6d4fae77",
-      "rule_id": "HLT-001-DEAD-MARKER",
-      "tlr": "Entropy",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#future-hostile-language-rule",
-      "owner": "tools"
-    },
-    {
-      "severity": "medium",
       "category": "security",
       "path": ".github/workflows/jankurai.yml",
       "problem": "`Security and supply-chain posture` scored 64 below the standard floor of 85",
@@ -3622,19 +3486,20 @@
       "severity": "medium",
       "category": "proof",
       "path": "Justfile",
-      "problem": "`Build speed signals` scored 60 below the standard floor of 85",
+      "problem": "`Build speed signals` scored 70 below the standard floor of 85",
       "agent_fix": "add fast deterministic build/test targets, caches, and narrow proof lanes for agent iteration",
       "evidence": [
         "build acceleration markers found",
         "targeted test/build commands found",
-        "locked dependency graph present"
+        "locked dependency graph present",
+        "CI cache hint found"
       ],
       "check_id": "HLT-018-PERF-CONCURRENCY-DRIFT:proof",
       "hardness": "soft",
       "confidence": 0.76,
       "evidence_kind": "repository-scan",
       "rerun_command": "just fast",
-      "fingerprint": "sha256:49dd87b3bb47929ee7676db7afb108c2861b56edf9a1ebe40d26535a1b8717f8",
+      "fingerprint": "sha256:a256a7390d4b91a5b0a95d6f092e524c8f4080f27fe2b62e28cf0801343d0fef",
       "rule_id": "HLT-018-PERF-CONCURRENCY-DRIFT",
       "tlr": "Verification",
       "lane": "fast",
@@ -3643,1497 +3508,49 @@
     },
     {
       "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/helpers.rs",
-      "problem": "unsafe or unvalidated input boundary marker appears in product code",
-      "agent_fix": "replace unsafe sinks with typed schemas, parameterized APIs, allowlists, or sandboxed execution plus negative tests",
+      "category": "generated",
+      "path": "agent/generated-zones.toml",
+      "problem": "generated zone file `target/` is missing",
+      "agent_fix": "regenerate `target/` using the declared command, or remove the zone entry if the file was deleted intentionally",
       "evidence": [
-        "|| lower.contains(\"innerhtml\")"
+        "generated zone integrity violation"
       ],
-      "check_id": "HLT-023-INPUT-BOUNDARY-GAP:security",
-      "hardness": "hard",
-      "confidence": 0.88,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just security",
-      "fingerprint": "sha256:f0214eaf06d65aaa2d1f73035cd44bb5e97303848af234177b14f3cf9f050963",
-      "rule_id": "HLT-023-INPUT-BOUNDARY-GAP",
-      "tlr": "Security, secrets, agency",
-      "lane": "security",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 535,
-      "matched_term": "unsafe html",
-      "reason": "input handling risk needs deterministic negative tests"
-    },
-    {
-      "severity": "high",
-      "category": "vibe",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
-      "problem": "product code contains TODO/stub/unimplemented/unreachable placeholder markers",
-      "agent_fix": "replace placeholders with implemented behavior, typed unsupported-state errors, or a tracked exception record with docs",
-      "evidence": [
-        "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs:112 \"auto-generated stub\","
-      ],
-      "check_id": "HLT-001-DEAD-MARKER:vibe",
-      "hardness": "hard",
-      "confidence": 0.88,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:5f00dd24e9d938211d2f77c9a5d597b371c958cf390b9661dd33d5e7b95fc4da",
-      "rule_id": "HLT-001-DEAD-MARKER",
-      "tlr": "Entropy",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#future-hostile-language-rule",
-      "owner": "tools",
-      "line": 112
-    },
-    {
-      "severity": "high",
-      "category": "vibe",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
-      "problem": "fallback soup detected in product code",
-      "agent_fix": "collapse fallback chains into explicit typed states with bounded retry policy, telemetry, and documented repair guidance",
-      "evidence": [
-        "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs:133 \"swallow error\","
-      ],
-      "check_id": "HLT-001-DEAD-MARKER:vibe",
-      "hardness": "hard",
-      "confidence": 0.88,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:cbe03fb6615011a537a6f85263d2d1eac76e565935ba4d3b3c408d0a5222172b",
-      "rule_id": "HLT-001-DEAD-MARKER",
-      "tlr": "Entropy",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#future-hostile-language-rule",
-      "owner": "tools",
-      "line": 133
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=/// Matches the `static mut` *keyword* (a mutable global — the real HLT-029 hazard)"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
+      "check_id": "HLT-002-GENERATED-MUTATION:generated",
       "hardness": "hard",
       "confidence": 0.95,
-      "evidence_kind": "repository-scan",
+      "evidence_kind": "contract-manifest",
       "rerun_command": "just fast",
-      "fingerprint": "sha256:6212c3fc273c58e89bd4756a529ab3dc4e0ef8b924094be7a5a6e323e864b186",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 11,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=/// `contains(\"static mut\")` flags as a false positive. The leading `[^'\\w]` rejects a"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:badf04d26adbc725d358ffb3d1b2ec1a36e8fe3f3f3942652eae8e21c5b5adf2",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 14,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unsafe block lacks a nearby local safety argument",
-      "agent_fix": "add a precise `SAFETY:` comment or remove the unsafe block",
-      "evidence": [
-        "detector=unsafe {",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"unsafe {\", \"unsafe{\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:fe11e8cb8bb69f53f2fd5d0c7606567b2420e531e4bb21964f9974c356a9ecef",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 28,
-      "matched_term": "rust.unsafe.undocumented-block",
-      "reason": "no nearby SAFETY comment was found"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "public unsafe API lacks a `# Safety` contract",
-      "agent_fix": "document caller obligations with a `# Safety` section",
-      "evidence": [
-        "detector=pub unsafe fn",
-        "proof-window=NearbySafetyDocs",
-        "snippet=\"pub unsafe fn\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:a005ee04ad8a5e02f253c7cdef0d99aff01518355c6d2959d2ca47c18af30b99",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 42,
-      "matched_term": "rust.unsafe.public-fn-missing-safety-doc",
-      "reason": "missing `# Safety` docs above the public unsafe item"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "public unsafe API lacks a `# Safety` contract",
-      "agent_fix": "document caller obligations with a `# Safety` section",
-      "evidence": [
-        "detector=pub unsafe fn",
-        "proof-window=NearbySafetyDocs",
-        "snippet=\"pub(crate) unsafe fn\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:95a92e55b750b5a27630121d5c10e51a57769824a194bb190935931b66d21fdc",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 43,
-      "matched_term": "rust.unsafe.public-fn-missing-safety-doc",
-      "reason": "missing `# Safety` docs above the public unsafe item"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "public unsafe API lacks a `# Safety` contract",
-      "agent_fix": "document caller obligations with a `# Safety` section",
-      "evidence": [
-        "detector=pub unsafe fn",
-        "proof-window=NearbySafetyDocs",
-        "snippet=\"pub(super) unsafe fn\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:18a9965fb4195b21ce508cfd352d4f4f9df2f84c8cf0bf17b0c68ea39f8b9ba9",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 44,
-      "matched_term": "rust.unsafe.public-fn-missing-safety-doc",
-      "reason": "missing `# Safety` docs above the public unsafe item"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unsafe Send/Sync impl needs a thread-safety proof",
-      "agent_fix": "remove the unsafe impl or document and prove the synchronization invariant",
-      "evidence": [
-        "detector=unsafe impl",
-        "proof-window=NearbySafetyDocs",
-        "snippet=matcher: Matcher::ContainsAny(&[\"unsafe impl send\", \"unsafe impl sync\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:4effc82dda87e35eb0195a6f0b9e1b35df465489c7a4cde446e595f66855d83c",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 58,
-      "matched_term": "rust.unsafe.impl-send-sync",
-      "reason": "thread-safety proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "transmute hides layout, validity, or lifetime assumptions",
-      "agent_fix": "replace transmute with an explicit conversion that proves layout and validity",
-      "evidence": [
-        "detector=transmute",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"transmute(\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:24554d1927f704c835a956730f3d28fb9ebdfdeddba7649216cba1632311a9bf",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 71,
-      "matched_term": "rust.unsafe.transmute",
-      "reason": "unsafe transmute appears without a local proof"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "assume_init can read uninitialized memory",
-      "agent_fix": "initialize every field before converting from MaybeUninit",
-      "evidence": [
-        "detector=assume_init",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"assume_init(\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:e56942907c8cad9084245d3ba9e6d0db44acc85cfe7f85a831fce159213348d5",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 84,
-      "matched_term": "rust.unsafe.assume-init",
-      "reason": "MaybeUninit proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unchecked indexing needs a mechanical bounds proof",
-      "agent_fix": "replace unchecked access with a checked access path or prove the bounds locally",
-      "evidence": [
-        "detector=get_unchecked",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"get_unchecked(\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:2b21441288de33f14c63e3197bf1efab7fde9a2b3291d36d8639fbb9482a844a",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 110,
-      "matched_term": "rust.unsafe.get-unchecked",
-      "reason": "bounds proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unwrap_unchecked bypasses the option/result proof",
-      "agent_fix": "use a checked path or add a local proof that the value is always present",
-      "evidence": [
-        "detector=unwrap_unchecked",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"unwrap_unchecked(\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:043b602c915c4547efac12e6af7794f795cef4117b07b29ddda5f11029048b51",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 123,
-      "matched_term": "rust.unsafe.unwrap-unchecked",
-      "reason": "presence proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unreachable_unchecked assumes a proof that reviewers cannot infer",
-      "agent_fix": "replace it with a checked branch or a documented invariant",
-      "evidence": [
-        "detector=unreachable_unchecked",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"unreachable_unchecked(\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:55529b4bebc4e808d97ec8968c3c5d094f69ebb63451f3729e541fafb9ed5343",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 136,
-      "matched_term": "rust.unsafe.unreachable-unchecked",
-      "reason": "control-flow proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unchecked UTF-8 conversion can fabricate invalid text",
-      "agent_fix": "validate the bytes or keep the value as raw bytes",
-      "evidence": [
-        "detector=from_utf8_unchecked",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"from_utf8_unchecked(\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:de517ad80056a23851020844c1e64e375f5a95c270e2fb9626181c9016327ce4",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 149,
-      "matched_term": "rust.unsafe.from-utf8-unchecked",
-      "reason": "UTF-8 validity is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "raw ownership conversion needs exact provenance and allocator proof",
-      "agent_fix": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "evidence": [
-        "detector=from_raw_parts",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"from_raw_parts(\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:16ae0dcd63581e75d81060ac5d396cfbf1c95b4e167dac27456af3a7c91aeb1f",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 163,
-      "matched_term": "rust.unsafe.raw-parts",
-      "reason": "ownership provenance is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "raw ownership conversion needs exact provenance and allocator proof",
-      "agent_fix": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "evidence": [
-        "detector=Box::from_raw",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"Box::from_raw(\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:f603cb2bd2b5b0fe05cec72459f3116cfe4f3224a722531d9f2e818b916b55ed",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 164,
-      "matched_term": "rust.unsafe.raw-parts",
-      "reason": "ownership provenance is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "raw ownership conversion needs exact provenance and allocator proof",
-      "agent_fix": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "evidence": [
-        "detector=Vec::from_raw_parts",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"Vec::from_raw_parts(\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:44d325f7d7536be89f5f92db2836b865a4d9c02b4658d983c27647c3cd814ceb",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 165,
-      "matched_term": "rust.unsafe.raw-parts",
-      "reason": "ownership provenance is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "raw ownership conversion needs exact provenance and allocator proof",
-      "agent_fix": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "evidence": [
-        "detector=CString::from_raw",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"CString::from_raw(\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:6b9681bbeb0b25aaec99a0cef6b4040fd9668a415bdda71a3fb856e5a53ef8fc",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 166,
-      "matched_term": "rust.unsafe.raw-parts",
-      "reason": "ownership provenance is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"static mut\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:be90188977ea51eb1a4c4cf93574a3a599acac3e2698786cf15f0e53cb087e94",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 180,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=problem: \"static mut exposes unsynchronized global mutation\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:062146086af8f1960faeb8f60aafb00ec8eca5526f657c7c502be7f680f09169",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 182,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "repr(packed) makes alignment-sensitive references dangerous",
-      "agent_fix": "remove packed layout or access fields through unaligned-safe primitives",
-      "evidence": [
-        "detector=repr(packed)",
-        "proof-window=NearbySafetyComment",
-        "snippet=matcher: Matcher::ContainsAny(&[\"repr(packed)\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:3a9bd6b3fb15f69bcec8b72a5752da17dc14d66f6086f512d2d4e83e65d846a7",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 193,
-      "matched_term": "rust.unsafe.repr-packed",
-      "reason": "alignment proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "repr(packed) makes alignment-sensitive references dangerous",
-      "agent_fix": "remove packed layout or access fields through unaligned-safe primitives",
-      "evidence": [
-        "detector=repr(packed)",
-        "proof-window=NearbySafetyComment",
-        "snippet=problem: \"repr(packed) makes alignment-sensitive references dangerous\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:9f42afdd47e7e7a427c16638d8a80223a59a89c90f114f9f696c0fcfa53c1bb3",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 195,
-      "matched_term": "rust.unsafe.repr-packed",
-      "reason": "alignment proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "broad lint suppression hides review-relevant issues",
-      "agent_fix": "tighten the lint scope or remove the allow entirely",
-      "evidence": [
-        "detector=rust.supply.allow-warnings",
-        "proof-window=NearbySafetyDocs",
-        "snippet=id: \"rust.supply.allow-warnings\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:114a373134053e201c1e7f4bdf09318e71f341c77a484498c3e32b1063331e77",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 199,
-      "matched_term": "rust.supply.lint-suppression",
-      "reason": "lint suppression proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unbounded channel or task creation needs explicit backpressure proof",
-      "agent_fix": "use a bounded channel or document the queue bound and shutdown path",
-      "evidence": [
-        "detector=unbounded_channel",
-        "proof-window=NearbyAsyncContext",
-        "snippet=matcher: Matcher::ContainsAny(&[\"unbounded_channel(\", \"unbounded(\"]),"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:8cb0e5b0b3de26b78c232023b4afa8aa7be1011d91660e3bec4331c0ec6a7596",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 249,
-      "matched_term": "rust.async.unbounded-channel",
-      "reason": "backpressure proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "public unsafe API lacks a `# Safety` contract",
-      "agent_fix": "document caller obligations with a `# Safety` section",
-      "evidence": [
-        "detector=pub unsafe fn",
-        "proof-window=NearbySafetyDocs",
-        "snippet=if (lower.contains(\"pub unsafe fn\")"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:79b8bbe25aa9e7552b846adf56ecbb812de253e4eb28c1884693ba911aafc27a",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 468,
-      "matched_term": "rust.unsafe.public-fn-missing-safety-doc",
-      "reason": "missing `# Safety` docs above the public unsafe item"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "public unsafe API lacks a `# Safety` contract",
-      "agent_fix": "document caller obligations with a `# Safety` section",
-      "evidence": [
-        "detector=pub unsafe fn",
-        "proof-window=NearbySafetyDocs",
-        "snippet=|| lower.contains(\"pub(crate) unsafe fn\")"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:66f51f5a6125b206cecc10436265bc60af380e83677a5c569c555ecbd510c5f0",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 469,
-      "matched_term": "rust.unsafe.public-fn-missing-safety-doc",
-      "reason": "missing `# Safety` docs above the public unsafe item"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "public unsafe API lacks a `# Safety` contract",
-      "agent_fix": "document caller obligations with a `# Safety` section",
-      "evidence": [
-        "detector=pub unsafe fn",
-        "proof-window=NearbySafetyDocs",
-        "snippet=|| lower.contains(\"pub(super) unsafe fn\"))"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:90a4b9fbbc92e4bdd8887ac201b701405d11a7f2a9a5519def1e7c7fa855c797",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 470,
-      "matched_term": "rust.unsafe.public-fn-missing-safety-doc",
-      "reason": "missing `# Safety` docs above the public unsafe item"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "public unsafe API lacks a `# Safety` contract",
-      "agent_fix": "document caller obligations with a `# Safety` section",
-      "evidence": [
-        "detector=pub unsafe fn",
-        "proof-window=NearbySafetyDocs",
-        "snippet=\"pub unsafe fn\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:a005ee04ad8a5e02f253c7cdef0d99aff01518355c6d2959d2ca47c18af30b99",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 475,
-      "matched_term": "rust.unsafe.public-fn-missing-safety-doc",
-      "reason": "missing `# Safety` docs above the public unsafe item"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unsafe Send/Sync impl needs a thread-safety proof",
-      "agent_fix": "remove the unsafe impl or document and prove the synchronization invariant",
-      "evidence": [
-        "detector=unsafe impl",
-        "proof-window=NearbySafetyDocs",
-        "snippet=if lower.contains(\"unsafe impl send\") || lower.contains(\"unsafe impl sync\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:e611bf6eab5ab7bcb1114f625d5e3289660f8b498f826b7eee3e85102bcaadc6",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 486,
-      "matched_term": "rust.unsafe.impl-send-sync",
-      "reason": "thread-safety proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unsafe block lacks a nearby local safety argument",
-      "agent_fix": "add a precise `SAFETY:` comment or remove the unsafe block",
-      "evidence": [
-        "detector=unsafe {",
-        "proof-window=NearbySafetyComment",
-        "snippet=if (lower.contains(\"unsafe {\") || lower.contains(\"unsafe{\"))"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:bea409b66d80722bc6c68cd8e5a624b30d14434c1c4c7995e06ea2d5d106d1a6",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 500,
-      "matched_term": "rust.unsafe.undocumented-block",
-      "reason": "no nearby SAFETY comment was found"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unsafe block lacks a nearby local safety argument",
-      "agent_fix": "add a precise `SAFETY:` comment or remove the unsafe block",
-      "evidence": [
-        "detector=unsafe {",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"unsafe {\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:7c2a38505eeaf43acc4a9103c652a06598f2a369c98b07b32958685da1324ef8",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 506,
-      "matched_term": "rust.unsafe.undocumented-block",
-      "reason": "no nearby SAFETY comment was found"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "transmute hides layout, validity, or lifetime assumptions",
-      "agent_fix": "replace transmute with an explicit conversion that proves layout and validity",
-      "evidence": [
-        "detector=transmute",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"transmute(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:22b0ccc16eafe0d553dff24c9d28cc2c3142ca3243e3673790db25409d54e23c",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 517,
-      "matched_term": "rust.unsafe.transmute",
-      "reason": "unsafe transmute appears without a local proof"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "assume_init can read uninitialized memory",
-      "agent_fix": "initialize every field before converting from MaybeUninit",
-      "evidence": [
-        "detector=assume_init",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"assume_init(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:2e972e0812bfb9227af034bbfcfbcacb96ec8b857081cfd376dc4d094ed17d4f",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 530,
-      "matched_term": "rust.unsafe.assume-init",
-      "reason": "MaybeUninit proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "mem::zeroed can fabricate invalid values",
-      "agent_fix": "construct the type with a valid initializer instead of zeroing it",
-      "evidence": [
-        "detector=zeroed",
-        "proof-window=NearbySafetyComment",
-        "snippet=// Match `mem::zeroed(` specifically (the unsafe fabricate-invalid-value hazard the finding"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:5dc806b4d457642fe3050a5e6e441d12152bf754dbfd0b8da81f08b70556307d",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 543,
-      "matched_term": "rust.unsafe.zeroed",
-      "reason": "all-zero validity was not proven"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "mem::zeroed can fabricate invalid values",
-      "agent_fix": "construct the type with a valid initializer instead of zeroing it",
-      "evidence": [
-        "detector=zeroed",
-        "proof-window=NearbySafetyComment",
-        "snippet=// `BytesMut::zeroed(` / `MaybeUninit::zeroed(`. `mem::zeroed(` covers std::/core:: forms."
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:1574cf8d2b392b5c87848c403eb4cd35d9b2b855e1e3113f73d982d02f888302",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 545,
-      "matched_term": "rust.unsafe.zeroed",
-      "reason": "all-zero validity was not proven"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "mem::zeroed can fabricate invalid values",
-      "agent_fix": "construct the type with a valid initializer instead of zeroing it",
-      "evidence": [
-        "detector=zeroed",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"mem::zeroed(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:bfde0316fcf2d6b5e4d121cc407ac7bb7868359b44c07e31f7be8280da5c68b9",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 546,
-      "matched_term": "rust.unsafe.zeroed",
-      "reason": "all-zero validity was not proven"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unchecked indexing needs a mechanical bounds proof",
-      "agent_fix": "replace unchecked access with a checked access path or prove the bounds locally",
-      "evidence": [
-        "detector=get_unchecked",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"get_unchecked(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:433171eb8b86ea72584b1ada5a61847a48f2d61aa1e4b3766bd5bb4f6f0d263c",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 559,
-      "matched_term": "rust.unsafe.get-unchecked",
-      "reason": "bounds proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unwrap_unchecked bypasses the option/result proof",
-      "agent_fix": "use a checked path or add a local proof that the value is always present",
-      "evidence": [
-        "detector=unwrap_unchecked",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"unwrap_unchecked(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:9c49ed24b2366bf3ad51ed39be41f03b4d26a9017288217c7703d9c6c347ee8f",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 572,
-      "matched_term": "rust.unsafe.unwrap-unchecked",
-      "reason": "presence proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unreachable_unchecked assumes a proof that reviewers cannot infer",
-      "agent_fix": "replace it with a checked branch or a documented invariant",
-      "evidence": [
-        "detector=unreachable_unchecked",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"unreachable_unchecked(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:5dcb031603702a672301b6d90b9740c03a839d14506ee51b18d39667f974b826",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 585,
-      "matched_term": "rust.unsafe.unreachable-unchecked",
-      "reason": "control-flow proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unchecked UTF-8 conversion can fabricate invalid text",
-      "agent_fix": "validate the bytes or keep the value as raw bytes",
-      "evidence": [
-        "detector=from_utf8_unchecked",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"from_utf8_unchecked(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:2701cc501c8853769d037415ae39dc25715874d3104c12f77b7a9cb14644bee2",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 598,
-      "matched_term": "rust.unsafe.from-utf8-unchecked",
-      "reason": "UTF-8 validity is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "raw ownership conversion needs exact provenance and allocator proof",
-      "agent_fix": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "evidence": [
-        "detector=Box::from_raw",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"box::from_raw(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:d1c475cd3595530bb09084d36f614e21950ced62c60602d9c7e777dcbf5c6a49",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 611,
-      "matched_term": "rust.unsafe.raw-parts",
-      "reason": "ownership provenance is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "raw ownership conversion needs exact provenance and allocator proof",
-      "agent_fix": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "evidence": [
-        "detector=Vec::from_raw_parts",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"vec::from_raw_parts(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:259f5af760fbd3a902c27379efed051f2cb621339621958c7f56d7424853a43f",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 624,
-      "matched_term": "rust.unsafe.raw-parts",
-      "reason": "ownership provenance is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "raw ownership conversion needs exact provenance and allocator proof",
-      "agent_fix": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "evidence": [
-        "detector=CString::from_raw",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"cstring::from_raw(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:fe7a766b62c10493aca4a56264614eef0cf202f2520984ea69d5ddddd6183123",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 637,
-      "matched_term": "rust.unsafe.raw-parts",
-      "reason": "ownership provenance is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "raw ownership conversion needs exact provenance and allocator proof",
-      "agent_fix": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "evidence": [
-        "detector=from_raw_parts",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"from_raw_parts(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:85f90cf450e52a61f28c0dd13f0d6aa31b2513a75b3253578f1ecac26070b09f",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 650,
-      "matched_term": "rust.unsafe.raw-parts",
-      "reason": "ownership provenance is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"static mut\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:cf55fe342f79032ad4cf1686e3b75ed2e50b1a6f33778add85b29b7f87b85d86",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 666,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"static mut exposes unsynchronized global mutation\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:1e642b695ca93f09a1b66ae7c940b1c339dedf665f2cfd389ae37fd174c58674",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 670,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "repr(packed) makes alignment-sensitive references dangerous",
-      "agent_fix": "remove packed layout or access fields through unaligned-safe primitives",
-      "evidence": [
-        "detector=repr(packed)",
-        "proof-window=NearbySafetyComment",
-        "snippet=if lower.contains(\"repr(packed)\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:6c9b4070b48c1e4be153707f36155971dccc5be2917e038dc90a6ec32e7b2592",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 676,
-      "matched_term": "rust.unsafe.repr-packed",
-      "reason": "alignment proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "repr(packed) makes alignment-sensitive references dangerous",
-      "agent_fix": "remove packed layout or access fields through unaligned-safe primitives",
-      "evidence": [
-        "detector=repr(packed)",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"repr(packed)\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:f659a0ebee70aaaf476ff0706967d26b09500d083d4dc3ea46bc587c4a6d6dde",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 679,
-      "matched_term": "rust.unsafe.repr-packed",
-      "reason": "alignment proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "repr(packed) makes alignment-sensitive references dangerous",
-      "agent_fix": "remove packed layout or access fields through unaligned-safe primitives",
-      "evidence": [
-        "detector=repr(packed)",
-        "proof-window=NearbySafetyComment",
-        "snippet=\"repr(packed) makes alignment-sensitive references dangerous\","
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:3321efb3cfb3018ae94f73ce0021bae376ad6d80088305e6f6682eff47bc545f",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 683,
-      "matched_term": "rust.unsafe.repr-packed",
-      "reason": "alignment proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "unbounded channel or task creation needs explicit backpressure proof",
-      "agent_fix": "use a bounded channel or document the queue bound and shutdown path",
-      "evidence": [
-        "detector=unbounded_channel",
-        "proof-window=NearbyAsyncContext",
-        "snippet=if lower.contains(\"unbounded_channel(\") || lower.contains(\"unbounded(\") {"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:c3ab29af2d8e97a3d8eeb9694ca699eb96b883484c8f53cdc06c48accb4a0a7b",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 702,
-      "matched_term": "rust.async.unbounded-channel",
-      "reason": "backpressure proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=assert!(flags(\"static mut GLOBAL: usize = 0;\"));"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:327ae25d6fd5e1ffc6185f9917ababe682ee40624c554cfbb3935b39a4612815",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 956,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=assert!(flags(\"    pub static mut COUNTER: u32 = 1;\"));"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:66bd92b8bdbead333bdb47b80f34d5410bb98e48ed26f0db2d3b768f8d2ee43e",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 957,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
-    },
-    {
-      "severity": "high",
-      "category": "security",
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "problem": "static mut exposes unsynchronized global mutation",
-      "agent_fix": "replace the mutable static with explicit synchronization or scoped ownership",
-      "evidence": [
-        "detector=static mut",
-        "proof-window=NearbySafetyComment",
-        "snippet=assert!(flags(\"pub(crate) static mut STATE: State = State::new();\"));"
-      ],
-      "check_id": "HLT-029-RUST-BAD-BEHAVIOR:security",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:5f93a77f3e1150bb7a8ea90099c48133e742e205b8d3afaea4e30b1468e2e9d8",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "docs_url": "docs/audit-rubric.md#top-level-risk-mapping",
-      "owner": "tools",
-      "line": 958,
-      "matched_term": "rust.unsafe.static-mut",
-      "reason": "global mutation proof is missing"
+      "fingerprint": "sha256:5426237a11233c74602294c2b6d8972d6256c78c8d467e736b858848adf5d755",
+      "rule_id": "HLT-002-GENERATED-MUTATION",
+      "tlr": "Contracts/data",
+      "lane": "contract",
+      "docs_url": "agent/JANKURAI_STANDARD.md#generated-zones",
+      "owner": "agent",
+      "line": 1
     },
     {
       "severity": "medium",
-      "category": "proof",
-      "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-      "problem": "human review or proof claim lacks reproducible evidence",
-      "agent_fix": "attach raw CI logs, review receipts, and replayable commands instead of accepting claims or summaries",
+      "category": "observability",
+      "path": "docs/testing.md",
+      "problem": "`Observability and repair evidence` scored 71 below the standard floor of 85",
+      "agent_fix": "add structured errors, telemetry, and repair receipts that tell the next agent where to rerun proof",
       "evidence": [
-        "\"accept all\","
+        "ops/observability directory present",
+        "repair receipts or raw artifact language found",
+        "repair queue schema is present",
+        "report attestation schema is present"
       ],
-      "check_id": "HLT-027-HUMAN-REVIEW-EVIDENCE-GAP:proof",
-      "hardness": "soft",
-      "confidence": 0.88,
-      "evidence_kind": "receipt",
-      "rerun_command": "just score",
-      "fingerprint": "sha256:f2f8d60fcc835e5120b14a06416ec68f31b587b9a7531a2fadefc0c46abdfd87",
-      "rule_id": "HLT-027-HUMAN-REVIEW-EVIDENCE-GAP",
-      "tlr": "Repair",
-      "lane": "audit",
-      "docs_url": "docs/testing.md",
-      "owner": "tools",
-      "line": 342,
-      "matched_term": "review evidence",
-      "reason": "proof and review claims need receipts"
-    },
-    {
-      "severity": "high",
-      "category": "vibe",
-      "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-      "problem": "dangerous comment detected: `silence error` phrase found (category: error-suppression)",
-      "agent_fix": "resolve the underlying issue described in the comment, then remove the comment; if the comment documents a necessary tradeoff, use `jankurai:allow comment-hygiene reason=... expires=...`",
-      "evidence": [
-        "detector=comment-hygiene.hard",
-        "category=error-suppression",
-        "phrase=silence error",
-        "path=crates/jankurai-audit-kernel/src/audit/scan.rs",
-        "line=601",
-        "snippet=// explicit signals below (catch all / swallow|ignore|silence error / except:)."
-      ],
-      "check_id": "HLT-041-COMMENT-HYGIENE:vibe",
-      "hardness": "hard",
-      "confidence": 0.95,
-      "evidence_kind": "repository-scan",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:e4dc97ea61fac38dc3e5f5f96adca33b90bb3d05ebfa5d5d2d133c383260baca",
-      "rule_id": "HLT-041-COMMENT-HYGIENE",
-      "tlr": "Entropy",
-      "lane": "fast",
-      "docs_url": "docs/BAD_COMMENTS.md",
-      "owner": "tools",
-      "line": 601,
-      "matched_term": "comment-hygiene.hard",
-      "reason": "comment confesses error suppression — this must be resolved before merge"
-    },
-    {
-      "severity": "medium",
-      "category": "data",
-      "path": "db/",
-      "problem": "`Data truth and workflow safety` scored 60 below the standard floor of 85",
-      "agent_fix": "move durable truth into migrations, constraints, adapters, and application-owned transactions",
-      "evidence": [
-        "constraint or RLS language found"
-      ],
-      "check_id": "HLT-006-DIRECT-DB-WRONG-LAYER:data",
+      "check_id": "HLT-017-OPAQUE-OBSERVABILITY:observability",
       "hardness": "soft",
       "confidence": 0.76,
-      "evidence_kind": "sql",
-      "rerun_command": "just fast",
-      "fingerprint": "sha256:fa84ba15b06d7072c8e4834fbcb6d4c707eee3e94616a153c0d6113e3b6c8f66",
-      "rule_id": "HLT-006-DIRECT-DB-WRONG-LAYER",
-      "tlr": "Contracts/data",
-      "lane": "db",
-      "docs_url": "docs/audit-rubric.md#required-shape",
-      "owner": "tools"
+      "evidence_kind": "repository-scan",
+      "rerun_command": "just score",
+      "fingerprint": "sha256:d800f67bdcc1b0cb4353b7db104f832aa94a2b2d11a23583363a4edec8344c52",
+      "rule_id": "HLT-017-OPAQUE-OBSERVABILITY",
+      "tlr": "Repair",
+      "lane": "observability",
+      "docs_url": "agent/JANKURAI_STANDARD.md#repair-receipts",
+      "owner": "standard"
     },
     {
       "severity": "medium",
@@ -5161,14 +3578,14 @@
   ],
   "agent_fix_queue": [
     {
-      "path": "db/",
-      "priority": "medium",
-      "rule_id": "HLT-006-DIRECT-DB-WRONG-LAYER",
+      "path": "agent/generated-zones.toml",
+      "priority": "high",
+      "rule_id": "HLT-002-GENERATED-MUTATION",
       "tlr": "Contracts/data",
-      "lane": "db",
-      "owner": "tools",
-      "task": "move durable truth into migrations, constraints, adapters, and application-owned transactions",
-      "why": "`Data truth and workflow safety` scored 60 below the standard floor of 85"
+      "lane": "contract",
+      "owner": "agent",
+      "task": "regenerate `target/` using the declared command, or remove the zone entry if the file was deleted intentionally",
+      "why": "generated zone file `target/` is missing"
     },
     {
       "path": "Justfile",
@@ -5178,7 +3595,7 @@
       "lane": "fast",
       "owner": "ops",
       "task": "add fast deterministic build/test targets, caches, and narrow proof lanes for agent iteration",
-      "why": "`Build speed signals` scored 60 below the standard floor of 85"
+      "why": "`Build speed signals` scored 70 below the standard floor of 85"
     },
     {
       "path": "agent/coverage-sources.toml",
@@ -5191,214 +3608,14 @@
       "why": "coverage evidence lane is configured but has not been run"
     },
     {
-      "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
+      "path": "docs/testing.md",
       "priority": "medium",
-      "rule_id": "HLT-027-HUMAN-REVIEW-EVIDENCE-GAP",
+      "rule_id": "HLT-017-OPAQUE-OBSERVABILITY",
       "tlr": "Repair",
-      "lane": "audit",
-      "owner": "tools",
-      "task": "attach raw CI logs, review receipts, and replayable commands instead of accepting claims or summaries",
-      "why": "human review or proof claim lacks reproducible evidence"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/helpers.rs",
-      "priority": "high",
-      "rule_id": "HLT-023-INPUT-BOUNDARY-GAP",
-      "tlr": "Security, secrets, agency",
-      "lane": "security",
-      "owner": "tools",
-      "task": "replace unsafe sinks with typed schemas, parameterized APIs, allowlists, or sandboxed execution plus negative tests",
-      "why": "unsafe or unvalidated input boundary marker appears in product code"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
-      "priority": "high",
-      "rule_id": "HLT-001-DEAD-MARKER",
-      "tlr": "Entropy",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "replace placeholders with implemented behavior, typed unsupported-state errors, or a tracked exception record with docs",
-      "why": "product code contains TODO/stub/unimplemented/unreachable placeholder markers"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/comments.rs",
-      "priority": "high",
-      "rule_id": "HLT-001-DEAD-MARKER",
-      "tlr": "Entropy",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "collapse fallback chains into explicit typed states with bounded retry policy, telemetry, and documented repair guidance",
-      "why": "fallback soup detected in product code"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "replace the mutable static with explicit synchronization or scoped ownership",
-      "why": "static mut exposes unsynchronized global mutation"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "add a precise `SAFETY:` comment or remove the unsafe block",
-      "why": "unsafe block lacks a nearby local safety argument"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "document caller obligations with a `# Safety` section",
-      "why": "public unsafe API lacks a `# Safety` contract"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "remove the unsafe impl or document and prove the synchronization invariant",
-      "why": "unsafe Send/Sync impl needs a thread-safety proof"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "replace transmute with an explicit conversion that proves layout and validity",
-      "why": "transmute hides layout, validity, or lifetime assumptions"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "initialize every field before converting from MaybeUninit",
-      "why": "assume_init can read uninitialized memory"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "replace unchecked access with a checked access path or prove the bounds locally",
-      "why": "unchecked indexing needs a mechanical bounds proof"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "use a checked path or add a local proof that the value is always present",
-      "why": "unwrap_unchecked bypasses the option/result proof"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "replace it with a checked branch or a documented invariant",
-      "why": "unreachable_unchecked assumes a proof that reviewers cannot infer"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "validate the bytes or keep the value as raw bytes",
-      "why": "unchecked UTF-8 conversion can fabricate invalid text"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "use the matching constructor/destructor pair or add a documented ownership proof",
-      "why": "raw ownership conversion needs exact provenance and allocator proof"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "remove packed layout or access fields through unaligned-safe primitives",
-      "why": "repr(packed) makes alignment-sensitive references dangerous"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "tighten the lint scope or remove the allow entirely",
-      "why": "broad lint suppression hides review-relevant issues"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "use a bounded channel or document the queue bound and shutdown path",
-      "why": "unbounded channel or task creation needs explicit backpressure proof"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/language_rules/rust.rs",
-      "priority": "high",
-      "rule_id": "HLT-029-RUST-BAD-BEHAVIOR",
-      "tlr": "Security, secrets, agency",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "construct the type with a valid initializer instead of zeroing it",
-      "why": "mem::zeroed can fabricate invalid values"
-    },
-    {
-      "path": "crates/jankurai-audit-kernel/src/audit/scan.rs",
-      "priority": "high",
-      "rule_id": "HLT-041-COMMENT-HYGIENE",
-      "tlr": "Entropy",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "resolve the underlying issue described in the comment, then remove the comment; if the comment documents a necessary tradeoff, use `jankurai:allow comment-hygiene reason=... expires=...`",
-      "why": "dangerous comment detected: `silence error` phrase found (category: error-suppression)"
-    },
-    {
-      "path": ".",
-      "priority": "medium",
-      "rule_id": "HLT-001-DEAD-MARKER",
-      "tlr": "Entropy",
-      "lane": "fast",
-      "owner": "tools",
-      "task": "split large or ambiguous authored code into smaller semantic modules with focused tests",
-      "why": "`Code shape and semantic surface` scored 0 below the standard floor of 85"
+      "lane": "observability",
+      "owner": "standard",
+      "task": "add structured errors, telemetry, and repair receipts that tell the next agent where to rerun proof",
+      "why": "`Observability and repair evidence` scored 71 below the standard floor of 85"
     },
     {
       "path": ".github/workflows/jankurai.yml",
