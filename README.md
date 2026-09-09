@@ -1,6 +1,8 @@
 # jankurai-tools-kernel
 
+<!-- jankurai-badge:start -->
 [![jankurai audit](agent/jankurai-badge.svg)](agent/jankurai-badge.json)
+<!-- jankurai-badge:end -->
 
 Shared audit substrate for the **jankurai** auditor and the Jankurai standard.
 This repository ships one crate, `jankurai-audit-kernel` (model, scan, rules,
