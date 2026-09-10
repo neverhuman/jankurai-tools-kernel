@@ -48,6 +48,7 @@ fn embedded_witness_contract_accepts_test_execution_and_existing_surface_types()
         "cli_command",
         "mcp_tool",
         "unsafe_or_process_sink",
+        "ci_hardening",
         "business_invariant",
     ] {
         let value = witness(surface_type);
