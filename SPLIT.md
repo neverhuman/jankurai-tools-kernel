@@ -2,7 +2,7 @@
 
 Status: initial split-family extraction
 Owner: Jankurai maintainers
-Last reviewed: 2026-06-12
+Last reviewed: 2026-09-11
 Applies to: jankurai-tools-kernel
 
 ## Role
@@ -19,7 +19,7 @@ extracted from jankurai-core so the core CLI and sibling tools depend on one ker
 
 ## Split Rules
 
-- Jeryu remains authoritative; GitHub is the public mirror.
+- GitHub is authoritative; Jeryu refs are retained as historical inputs.
 - Release builds depend on immutable GitHub tags, not branches.
 - Local development uses the hub `scripts/fuse.sh` output under `.fusion/`.
 - Committed manifests must not depend on sibling checkout paths.
