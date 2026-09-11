@@ -4,6 +4,9 @@
 [![Jankurai score: 89/100](agent/jankurai-badge.svg)](agent/jankurai-badge.json)
 <!-- jankurai-badge:end -->
 
+Historical score from the committed [baseline report](agent/baselines/main.repo-score.json)
+and [auditor metadata](agent/jankurai-badge.json).
+
 Shared audit substrate for the **jankurai** auditor and the Jankurai standard.
 This repository ships one crate, `jankurai-audit-kernel` (model, scan, rules,
 caps, boundaries, validation, render), extracted from `jankurai-core` so the
@@ -11,28 +14,26 @@ core CLI and sibling tools depend on one kernel. It is one member of the Jankura
 split family; read [`SPLIT.md`](SPLIT.md) for the family contract and
 [`AGENTS.md`](AGENTS.md) for agent routing rules.
 
-## Stack
+## Contributor setup
 
-Rust core + TypeScript/React/Vite product surface + PostgreSQL truth + generated
-contracts + exception-only Python AI/data service. New implementation is
-Rust-first; see [`docs/architecture.md`](docs/architecture.md).
+This repository supplies shared inventory, findings, boundary rules and report models to
+[Jankurai](https://github.com/neverhuman/jankurai). For binary installation,
+your first audit, and the complete family build, start at the hub.
 
-## Quick start
+Install Rust **1.97.1**, a native compiler/linker and Node.js **24** for CI
+control tests. Then run the crate's contributor checks:
 
-```bash
-# One-command setup (toolchain + locked dependencies).
-just setup
-
-# Deterministic fast lane (check + tests).
-just fast
-
-# Full local check: format, lint, fast, security, and self-audit.
-just check
+```sh
+cargo fetch --locked
+cargo test --workspace --locked
+bash scripts/ci-local.sh required
 ```
 
-The full command surface lives in the root [`Justfile`](Justfile). Continuous
-integration runs the same lanes under
-[`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+The native library does not need Node.js at runtime. The complete quality lane
+also needs the pinned security tools and auditor installed by the owning CI
+setup; see [testing](docs/testing.md) and
+[the workflow](.github/workflows/ci.yml). Local recipes are in the
+[Justfile](Justfile).
 
 ## Layout
 

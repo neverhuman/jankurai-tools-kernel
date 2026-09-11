@@ -235,9 +235,7 @@ fn file_seed(root: &Path, rel: &Path) -> Option<FileSeed> {
         .to_string();
     let suffix = suffix_of(&rel_path);
     let is_code = is_code_file(&name, &suffix);
-    let is_generated = rel_path.split('/').any(|part| {
-        part == "generated" || part.starts_with("generated") || part == "gen" || part == "artifacts"
-    });
+    let is_generated = super::file_kinds::is_generated_path(&rel_path);
     let is_text = is_text_candidate(&name, &suffix, &rel_path);
     Some(FileSeed {
         rel: rel.to_path_buf(),
@@ -411,9 +409,7 @@ pub fn file_info_from_candidate(
         .to_string();
     let suffix = suffix_of(&rel_path);
     let is_code = is_code_file(&name, &suffix);
-    let is_generated = rel_path.split('/').any(|part| {
-        part == "generated" || part.starts_with("generated") || part == "gen" || part == "artifacts"
-    });
+    let is_generated = super::file_kinds::is_generated_path(&rel_path);
     let is_text = is_text_candidate(&name, &suffix, &rel_path);
     let (text, line_count) = if is_text {
         capture_candidate_text(bytes, text_capture_chars)
