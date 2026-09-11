@@ -65,6 +65,7 @@ const TEXT_EXTS: &[&str] = &[
     ".cc",
     ".cfg",
     ".cjs",
+    ".cts",
     ".conf",
     ".cpp",
     ".cs",
@@ -98,6 +99,7 @@ const TEXT_EXTS: &[&str] = &[
     ".md",
     ".mk",
     ".mjs",
+    ".mts",
     ".mm",
     ".ps1",
     ".php",
@@ -122,8 +124,18 @@ const TEXT_EXTS: &[&str] = &[
 const CODE_EXTS: &[&str] = &[
     ".c", ".cc", ".cpp", ".cs", ".dart", ".go", ".h", ".hh", ".hpp", ".java", ".js", ".jsx", ".kt",
     ".kts", ".ex", ".exs", ".lua", ".m", ".mm", ".py", ".php", ".rb", ".rs", ".sh", ".swift",
-    ".scala", ".ts", ".tsx",
+    ".scala", ".ts", ".tsx", ".mjs", ".cjs", ".mts", ".cts",
 ];
+
+/// A conventional output-directory hint, never an execution observation.
+/// A source filename or similarly named directory is not a generated zone.
+pub(crate) fn is_generated_path(path: &str) -> bool {
+    path.rsplit_once('/').is_some_and(|(directories, _)| {
+        directories
+            .split('/')
+            .any(|part| matches!(part, "generated" | "gen" | "artifacts"))
+    })
+}
 
 pub fn suffix_of(rel_path: &str) -> String {
     let lower = rel_path.to_ascii_lowercase();
